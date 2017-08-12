@@ -20,5 +20,8 @@
   "dependencies": {
     "express": "^4.15.4",
     "node-fetch": "^1.7.2"
+  },
+  "engines": {
+    "node": "6.11.1"
   }
 }
