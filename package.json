@@ -1,0 +1,24 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "description": "Wanderlust travel application",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcussmith0/wanderlust.git"
+  },
+  "author": "Erica R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcussmith0/wanderlust/issues"
+  },
+  "homepage": "https://github.com/marcussmith0/wanderlust#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "node-fetch": "^1.7.2"
+  }
+}
