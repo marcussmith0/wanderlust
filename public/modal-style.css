@@ -16,10 +16,23 @@ h5.modal-title {
         max-width: 100%;
     }
 }
+ @media (min-width: 1200px){
+.col-xl-3  {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 75%;
+        -ms-flex: 0 0 75%;
+        flex: 0 0 100%;
+        max-width: 46%;
+    }
+} 
 
 hr {
     border: none;
-    border-left: 1px solid hsl(74, 61%, 50%);
-    height: 100vh;
+    border-left: 1px solid hsl(60, 3%, 75%);
+    height: 50vh;
     width: 1px;
+}
+
+p .account-text{
+  
 }
