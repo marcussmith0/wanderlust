@@ -1,0 +1,25 @@
+h5.modal-title{
+    display:flex;
+    flex-wrap: wrap;
+    color: red;
+    text-align:center;
+    font-size:26px;
+}
+
+ /* @media (min-width: 1200px)
+.col-xl-9 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 75%;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 100%;
+    max-width: 75%;
+} */
+
+
+.col-xl-9{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 75%;
+    /* -ms-flex: 0 0 75%; */
+    flex: 0 0 100%;
+    max-width: 75%;
+} 
