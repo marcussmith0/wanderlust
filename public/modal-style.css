@@ -32,3 +32,9 @@ hr {
     height: 50vh;
     width: 1px;
 }
+
+a:not([href]):not([tabindex]) {
+    /* color: inherit; */
+    color:#ffffff;
+    text-decoration: none;
+}
