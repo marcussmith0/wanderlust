@@ -38,3 +38,8 @@ a:not([href]):not([tabindex]) {
     color:#ffffff;
     text-decoration: none;
 }
+
+p .memo{
+    font-size:10px;
+    color:red;
+}
