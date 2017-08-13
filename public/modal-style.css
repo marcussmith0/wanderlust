@@ -1,7 +1,7 @@
 h5.modal-title {
     display: flex;
     flex-wrap: wrap;
-    color:#7c78a3;
+    color: #7c78a3;
     text-align: center;
     font-size: 26px;
     margin: 0 auto;
@@ -12,7 +12,7 @@ h5.modal-title {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
-         flex: 0 0 100%;
-         max-width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
- }
+}
