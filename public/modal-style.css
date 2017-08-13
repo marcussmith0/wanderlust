@@ -9,10 +9,7 @@ h5.modal-title {
 @media (min-width: 1200px) {
     .col-xl-9 {
         -webkit-box-flex: 0;
-        /* -webkit-flex: 0 0 75%; */
-        /* -ms-flex: 0 0 75%;  */
         flex: 0 0 100%;
-        /* max-width: 75%; */
     }
 }
 
@@ -24,3 +21,13 @@ h5.modal-title {
     flex: 0 0 100%;
     max-width: 75%;
 }/*
+
+@media (min-width: 1200px) {
+    .col-xl-9 {
+        -webkit-box-flex: 0;
+        /* -webkit-flex: 0 0 75%;
+        /* -ms-flex: 0 0 75%;  
+        flex: 0 0 100%;
+        /* max-width: 75%; 
+    }
+}
