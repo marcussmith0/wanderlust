@@ -40,6 +40,8 @@ a:not([href]):not([tabindex]) {
     text-align:center;
 }
 
+
+
  .memo{
     font-size:12px;
     color:#000000;
