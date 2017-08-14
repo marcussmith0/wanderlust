@@ -37,6 +37,7 @@ a:not([href]):not([tabindex]) {
     /* color: inherit; */
     color:#ffffff;
     text-decoration: none;
+    text-align:center;
 }
 
  .memo{
