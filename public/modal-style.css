@@ -1,48 +1,69 @@
-h5.modal-title {
-    display: flex;
-    flex-wrap: wrap;
-    color: #7c78a3;
-    text-align: center;
-    font-size: 26px;
-    margin: 0 auto;
-}
+.modal-backdrop {
+    background-image: url(./images/beach2.jpg) no-repeat center center fixed; 
+ }
+ 
+ .modal-header {
+     border: none;
+ }
 
-@media (min-width: 1200px) {
-    .col-xl-9 {
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 75%;
-        -ms-flex: 0 0 75%;
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
- @media (min-width: 1200px){
-.col-xl-3  {
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 75%;
-        -ms-flex: 0 0 75%;
-        flex: 0 0 100%;
-        max-width: 46%;
-    }
-} 
+ .modal-content {
+     -webkit-border-radius: 0px !important;
+     -moz-border-radius: 0px !important;
+     border-radius: 25px !important;
+     /* border-color: #5570c7; */
+     border: 2px solid #c1cede;
+ }
 
-hr {
-    border: none;
-    border-left: 1px solid hsl(60, 3%, 75%);
-    height: 50vh;
-    width: 1px;
-}
+ h5.modal-title {
+     display: flex;
+     flex-wrap: wrap;
+     color: #5570c7;
+     text-align: center;
+     font-size: 52px;
+     font-family:Dr Sugiyama;
+     margin: 0 auto;
+ }
 
-a:not([href]):not([tabindex]) {
-    /* color: inherit; */
-    color:#ffffff;
-    text-decoration: none;
-    text-align:center;
-}
+ @media (min-width: 1200px) {
+     .col-xl-9 {
+         -webkit-box-flex: 0;
+         -webkit-flex: 0 0 75%;
+         -ms-flex: 0 0 75%;
+         flex: 0 0 100%;
+         max-width: 100%;
+     }
+ }
 
+ @media (min-width: 1200px) {
+     .col-xl-3 {
+         -webkit-box-flex: 0;
+         -webkit-flex: 0 0 75%;
+         -ms-flex: 0 0 75%;
+         flex: 0 0 100%;
+         max-width: 46%;
+     }
+ }
 
+ hr {
+     border: none;
+     border-left: 1px solid hsl(60, 3%, 75%);
+     height: 50vh;
+     width: 1px;
+ }
 
- .memo{
-    font-size:12px;
-    color:#000000;
-}
+ a:not([href]):not([tabindex]) {
+     /* color: inherit; */
+     color: #ffffff;
+     text-decoration: none;
+     text-align: center;
+ }
+
+ .memo {
+     font-size: 12px;
+     color: #000000;
+ }
+
+ .memo-2 {
+     font-size: 14px;
+     color: #000000;
+ }
