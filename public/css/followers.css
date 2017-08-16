@@ -1,10 +1,12 @@
 .follower-grid {
     column-count: 3;
-    column-gap: 5px;
-    column-width: 10px;
+    column-gap: 10px;
+    column-width: 8px;
 }
 
 img {
-    /* break-inside: avoid; */
+    break-inside: avoid-column;
     width: 100%;
+    margin: 10px;
+  
 }
