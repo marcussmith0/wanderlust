@@ -4,7 +4,7 @@
     column-width: 8px;
 }
 
-img {
+.gridthings img {
     break-inside: avoid-column;
     width: 100%;
     margin: 10px;
