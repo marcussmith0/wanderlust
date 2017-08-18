@@ -15,7 +15,8 @@ border-radius: 50em;
 
 .user-icon{
     position: relative;
-    
+    right:38px
+
 }
 
 .user-icon a {
