@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="javascript/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="javascript/jquery.exif.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Geo-Locator</title>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #app {
+            width: 30%;
+        }
+
+        #map {
+            margin-left: 10px;
+            height: 600px;
+            width: 500px;
+        }
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+
+
+        #latlng {
+            width: 225px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <label class="file-upload-container" for="file">
+        <input type="file" id="file" style="display: none;"/>
+            Select a File to Upload
+    </label>
+    <form id="myform">
+        <img id="img-preview" />
+    </form>
+    
+
+    <script>
+        // This code block extracts the GPS data from the EXIF object and pushes them into an array of coordinates
+        // --------------------------------------------------------------------------------------------------------------- 
+        var coords = [];
+
+        var someCallback = function (exifObject) {
+            // Extract the GPS coordinates from each photo uploaded.
+            var lat = (exifObject.GPSLatitude[0] + exifObject.GPSLatitude[1] / 60 + exifObject.GPSLatitude[2] / 3600);
+            var lng = (exifObject.GPSLongitude[0] + exifObject.GPSLongitude[1] / 60 + exifObject.GPSLongitude[2] / 3600);
+            console.log(lat);
+            console.log(-lng);
+            console.log("exif: ", exifObject);
+
+            // Store the individual coordinates in an array for plotting. 
+            coords.push({ lat: lat, lng: -lng });
+            return coords;
+        }
+        // ----------------------------------------------------------------------------------------------------------------
+
+
+
+
+        // This function initializes the map, and sets the default parameters
+        // ----------------------------------------------------------------------------------------------------------------
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: 40.731, lng: -73.997 }
+            });
+            // var geocoder = new google.maps.Geocoder;
+            var infowindow = new google.maps.InfoWindow;
+
+
+            $('#file').change(function () {
+                try {
+                    $(this).fileExif(function (exifObject) {
+                        someCallback(exifObject);
+                        var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dmekb5dug/upload';
+                        var CLOUDINARY_UPLOAD_PRESET = 'r7lvwcam';
+
+                        var imgPreview = document.getElementById('img-preview');
+                        var fileUpload = document.getElementById('file');
+
+                        fileUpload.addEventListener('change', function (event) {
+                            var files = event.target.files[0];
+                            console.log("Event: ", event);
+                            var formData = new FormData();
+                            formData.append('file', files);
+                            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+                            axios({
+                                url: CLOUDINARY_URL,
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                data: formData
+                            }).then(function (res) {
+                                console.log("Res: ", res);
+                                imgPreview.src = res.data.secure_url;
+                            }).catch(function (err) {
+                                console.error("Error: ", err);
+                            });
+
+                        });
+                        geocodeLatLng(new google.maps.Geocoder, map, infowindow);
+
+                    })
+                }
+                catch (e) {
+                    alert(e);
+                }
+            });
+        }
+        // -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+        // This function updates the map with a new marker when a new image is uploaded.
+        // -----------------------------------------------------------------------------------------------------------------
+        function geocodeLatLng(geocoder, map, infowindow) {
+            // var input = document.getElementById('latlng').value;
+            // console.log("input:", input);
+            // var latlngStr = input.split(',', 2);
+            // var latlng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
+            // console.log("latlng: ", latlng)
+            console.log("coords: ", coords);
+            for (var i = 0; i < coords.length; i++) {
+                console.log("coords.value: ", coords[i]);
+                addMarker(geocoder, coords[i], map, infowindow);
+            }
+        };
+
+        function addMarker(geocoder, coord, map, infowindow) {
+            geocoder.geocode({ 'location': coord }, function (results, status) {
+                if (status === 'OK') {
+                    if (results[0]) {
+                        map.setZoom(12);
+                        var marker = new google.maps.Marker({
+                            position: coord,
+                            map: map
+                        });
+                        infowindow.setContent(results.formatted_address);
+                        infowindow.open(map, marker);
+                    } else {
+                        window.alert('No results found');
+                    }
+                } else {
+                    window.alert('Geocoder failed due to: ' + status);
+                }
+            });
+        }
+        // -------------------------------------------------------------------------------------------------------------------------
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="public/bundle.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5xC8EqSSzMRkJtLEEqRtggHZop-MRMQo&callback=initMap"></script>
+
+</body>
+
+</html>
