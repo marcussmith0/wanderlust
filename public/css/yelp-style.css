@@ -1,0 +1,37 @@
+body {
+    background: url("images/381171b.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    font-family: 'Verdana'; 
+}
+
+#app1 {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 20%;
+    font-size: 3.5em;
+    color: white;
+}
+
+#app2 {
+    margin-left: 45%;
+    font-size: 3.5em;
+    color: white;
+}
+
+#foo {
+    position: fixed;
+    margin: 0 70%;
+    border: 1px solid white;
+}
+
+#container {
+    margin-top: 15%;
+    height: 200px;
+}
+
+#logo {
+    margin-left: 45%;
+    text-align: center;
+    font-size: 10em;
+    color: #5570C7;
+}
