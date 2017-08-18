@@ -9,3 +9,18 @@
     width: 100%;
     margin: 10px;
 }
+.user-avatar{
+border-radius: 50em;
+}
+
+.user-icon{
+    position: relative;
+    
+}
+
+.user-icon a {
+
+    color: #ffffff;
+
+
+}
