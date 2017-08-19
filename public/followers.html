@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="./css/carousel.css" rel="stylesheet">
@@ -34,33 +35,39 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Followers</a>
+                    <a class="nav-link" href="./followers.html"><i class="fa fa-users" aria-hidden="true"></i> Followers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Timeline</a>
+                    <a class="nav-link" href="./timeline.html"><i class="fa fa-clock-o" aria-hidden="true"></i> Timeline</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./albums.html"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Memories</a>
+                    <a class="nav-link" href="./discover.html"><i class="fa fa-globe" aria-hidden="true"></i> Discover</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Explore</a>
+                    <a class="nav-link" href="./pinboard.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pinboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bucketlist</a>
+                    <a class="nav-link" href="./bucketlist.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Bucketlist</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Messages</a>
+                    <a class="nav-link" href="./messages.html"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a>
                 </li>
                 <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">BucketList</a>
           </li> -->
             </ul>
-
-            <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button>
-            <!-- <form class="form-inline mt-2 mt-md-0">
+            <div class="user-icon">
+                <a href="#"><img src="./images/user-avatar.jpg" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, Joe Doe</strong></a>
+                <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
+                <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
+            </div>
         </div>
     </nav>
 
@@ -72,12 +79,11 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg" alt="First slide">
+                <img class="first-slide" src="./images/india.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1>Example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>Visit Mumbai</h1>
+                        <p>Mumbai is among the most popular nerve centers of India, a business and entertainment capital, the bustling city of dreams! </p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                     </div>
                 </div>
@@ -87,9 +93,8 @@
                     alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>It's More Fun in the Philippines</h1>
+                        <p>The country boasts thousands of islands with powdery beaches and crystal clear water, lush forests, active volcanoes and futuristic cities</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
                     </div>
                 </div>
@@ -98,9 +103,10 @@
                 <img class="third-slide" src="https://www.adb.org/sites/default/files/content-media/17596-ado-philippines-final.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-right">
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>Explore the Night Life</h1>
+                        <p>
+                            Switch is one of the most popular clubs in the city of Tbilisi. It is actually a private club, because not everyone is allowed
+                            inside. Visitors need to make sure they’re well dressed to gain entry.</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
                     </div>
                 </div>
@@ -128,15 +134,17 @@
             <div class="col-lg-12">
 
                 <div class="follower-grid ">
-                    <img src="./images/couples.jpg" alt>
-                    <img src="./images/cali.jpg" alt>
-                    <img src="./images/camping.jpg" alt>
-                    <img src="./images/vegas.jpg" alt>
-                    <img src="./images/beachgirls.jpg" alt>
-                    <img src="./images/wildlife.jpg" alt>
-                    <img src="./images/couples.jpg" alt>
-                    <img src="./images/couples.jpg" alt>
-                    <img src="./images/couples.jpg" alt>
+                    <div class="gridthings">
+                        <img src="./images/couples.jpg" alt>
+                        <img src="./images/cali.jpg" alt>
+                        <img src="./images/camping.jpg" alt>
+                        <img src="./images/vegas.jpg" alt>
+                        <img src="./images/beachgirls.jpg" alt>
+                        <img src="./images/wildlife.jpg" alt>
+                        <img src="./images/china.jpg" alt>
+                        <img src="./images/president.jpg" alt>
+                        <img src="./images/thailand.jpg" alt>
+                    </div>
                 </div>
 
 

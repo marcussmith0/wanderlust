@@ -13,11 +13,15 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="./css/carousel.css" rel="stylesheet">
     <link href="./css/navbar.css" rel="stylesheet">
     <link href="./css/followers.css" rel="stylesheet">
+    <link href="./css/timeline-style.css" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -34,76 +38,39 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Followers</a>
+                    <a class="nav-link" href="./followers.html"><i class="fa fa-users" aria-hidden="true"></i> Followers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Timeline</a>
+                    <a class="nav-link" href="./timeline.html"><i class="fa fa-clock-o" aria-hidden="true"></i> Timeline</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./albums.html"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Memories</a>
+                    <a class="nav-link" href="./discover.html"><i class="fa fa-globe" aria-hidden="true"></i> Discover</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Explore</a>
+                    <a class="nav-link" href="./pinboard.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pinboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bucketlist</a>
+                    <a class="nav-link" href="./bucketlist.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Bucketlist</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Messages</a>
+                    <a class="nav-link" href="./messages.html"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a>
                 </li>
                 <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">BucketList</a>
           </li> -->
             </ul>
-
-            <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button>
-            <!-- <form class="form-inline mt-2 mt-md-0">
+            <div class="user-icon">
+                <a href="#"><img src="./images/user-avatar.jpg" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, Joe Doe</strong></a>
+                <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
+                <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
-        </div>
-    </nav>
-
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id ="random">
-        <a class="navbar-brand" href="#">WanderLust</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto navbar-center">
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> -->
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Followers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Timeline</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Memories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bucketlist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Messages</a>
-                </li>
-                <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#">BucketList</a>
-          </li> -->
-            </ul>
-
-            <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button>
-            <!-- <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
+            </div>
         </div>
     </nav>
 
@@ -115,12 +82,11 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg" alt="First slide">
+                <img class="first-slide" src="./images/india.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1>Example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>Visit Mumbai</h1>
+                        <p>Mumbai is among the most popular nerve centers of India, a business and entertainment capital, the bustling city of dreams! </p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                     </div>
                 </div>
@@ -130,9 +96,8 @@
                     alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>It's More Fun in the Philippines</h1>
+                        <p>The country boasts thousands of islands with powdery beaches and crystal clear water, lush forests, active volcanoes and futuristic cities</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
                     </div>
                 </div>
@@ -141,9 +106,10 @@
                 <img class="third-slide" src="https://www.adb.org/sites/default/files/content-media/17596-ado-philippines-final.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-right">
-                        <h1>One more for good measure.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
-                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <h1>Explore the Night Life</h1>
+                        <p>
+                            Switch is one of the most popular clubs in the city of Tbilisi. It is actually a private club, because not everyone is allowed
+                            inside. Visitors need to make sure they’re well dressed to gain entry.</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
                     </div>
                 </div>
@@ -170,21 +136,315 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <div class="follower-grid ">
-                    <img src="http://lorempixel.com/100/200/abstract" alt>
-                    <img src="http://lorempixel.com/g/100/250/abstract" alt>
-                    <img src="http://lorempixel.com/100/130/abstract" alt>
-                    <img src="http://lorempixel.com/g/100/240/abstract" alt>
-                    <img src="http://lorempixel.com/100/220/abstract" alt>
-                    <img src="http://lorempixel.com/100/180/abstract" alt>
-                    <img src="http://lorempixel.com/100/210/abstract" alt>
-                    <img src="http://lorempixel.com/g/100/170/abstract" alt>
-                </div>
+                    <ul class="timeline">
+                            <li>
+                                <div class="timeline-badge"><i class="fa fa-sun-o" aria-hidden="true"></i></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+        
+                                        <img src="./images/gallery1.jpg">
+                                        <br />
+                                        <br />
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+        
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+        
+                                        <hr>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button> -->
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge warning"><i class="fa fa-ship" aria-hidden="true"></i></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+        
+                                        <img src="./images/gallery2.jpg">
+                                        <br />
+                                        <br />
+        
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                        <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi
+                                            no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis
+                                            tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque
+                                            nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante
+                                            turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non
+                                            scelerisque augue. Aenean justo massa.</p>
+        
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+        
+                                        <hr>
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                               
+                               
+                                </div> -->
+                                    </div>
+                            </li>
+                            <li>
+                                <div class="timeline-badge danger"><i class="fa fa-compass" aria-hidden="true"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+        
+                                        <img src="./images/gallery3.jpg">
+        
+                                        <br />
+                                        <br />
+        
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+        
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+                                        <hr>
+        
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                               
+                                
+                                </div> -->
+                                    </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <img src="./images/gallery4.jpg">
+        
+                                        <br />
+                                        <br />
+        
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+        
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+                                        <hr>
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                               
+                                
+                                </div> -->
+                                    </div>
+                            </li>
+                            <li>
+                                <div class="timeline-badge info"><i class="fa fa-tree" aria-hidden="true"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+        
+                                        <img src="./images/gallery5.jpg">
+        
+                                        <br />
+                                        <br />
+        
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+                                        <hr>
+        
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="#">Action</a></li>
+                                      <li><a href="#">Another action</a></li>
+                                      <li><a href="#">Something else here</a></li>
+                                      <li class="divider"></li>
+                                      <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                  </div> -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+        
+                                        <img src="./images/gallery7.jpg">
+                                        <br />
+                                        <br />
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+        
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+                                        <hr>
+        
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                               
+                                
+                                
+                                </div> -->
+                                    </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge success"><i class="fa fa-smile-o" aria-hidden="true"></i></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>  Posted 11 hours, August 21, 2017</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <img src="./images/sunset.jpg">
+        
+                                        <br />
+                                        <br />
+        
+                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis
+                                            porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros
+                                            vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois
+                                            paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss
+                                            quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                        <br />
+                                        <button type="button" class="btn btn-outline-info">Read More...</button>
+                                        <hr>
+        
+                                        <div class="blog-icons">
+                                            <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+        
+                                            <i class="fa fa-share fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
+                                    </button>
+                               
+                                
+                                </div> -->
+                                    </div>
+                            </li>
+                        </ul>
+                        </div>
+        
+        
+        
+                        <!--End Timeline -->
+        
+                        </div>
+                    </div>
+        
+        
 
 
-            </div>
-
-        </div>
 
 
 
