@@ -1,0 +1,27 @@
+.follower-grid {
+    column-count: 3;
+    column-gap: 10px;
+    column-width: 8px;
+}
+
+.gridthings img {
+    break-inside: avoid-column;
+    width: 100%;
+    margin: 10px;
+}
+.user-avatar{
+border-radius: 50em;
+}
+
+.user-icon{
+    position: relative;
+    right:38px
+
+}
+
+.user-icon a {
+
+    color: #ffffff;
+
+
+}
