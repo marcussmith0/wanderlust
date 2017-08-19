@@ -11,9 +11,9 @@ var userSchema = new Schema({
         name         : String
     },
 
-    posts: [{
+    albums: [{
         type: Schema.Types.ObjectId,
-        ref: "Post"
+        ref: "Album"
     }],
 
     following: [{
