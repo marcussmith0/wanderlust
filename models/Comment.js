@@ -10,18 +10,19 @@ var commentSchema = new Schema({
 
     likes: [{
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "User"
     }],
 
     dislikes: [{
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "User"
     }],
 
     created_at: Date,
 
-    created_by : {
-        
+    _creator: {
+        type: String,
+        required: true
     }
 
 });
