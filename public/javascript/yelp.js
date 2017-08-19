@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	console.log("ready")
+})
+
 $('#search-button').click(function(e){
   e.preventDefault();
   var userLocation = $('#search-field').val();
@@ -34,7 +38,7 @@ $('#search-button').click(function(e){
 
 			console.log(mapArray);
 
-			$('#placesData').append(html);
+			$('#search-results').append(html);
 
 		mapArray.forEach(function(el) {
 			var markerOne = new google.maps.Marker({

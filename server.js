@@ -13,8 +13,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(express.static("public/javascript"));
+
 app.get('/', function(req, res) {
-    res.send("It works!");
+    res.sendFile(__dirname+"/public/yelp.html");
 });
 
 app.get('/api/:postalCode', function (req, res) {
