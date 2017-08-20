@@ -80,3 +80,11 @@ a:not([href]):not([tabindex]) {
 .stats{
     margin-top: -15px;
 }
+
+.fa-heart{
+    color: e93939;
+}
+
+.fa-heart:hover{
+    color: a50a0a;
+}
