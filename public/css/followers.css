@@ -25,3 +25,17 @@ border-radius: 50em;
 
 
 }
+
+/*Follower Names*/
+
+.follower1 { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+ }
+ 
+ .followerName { 
+    position: absolute; 
+    top: 200px; 
+    left: 0; 
+    width: 100%; 
+ }
