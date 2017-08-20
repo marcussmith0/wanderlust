@@ -75,3 +75,8 @@ a:not([href]):not([tabindex]) {
     font-size: 14px;
     color: #000000;
 }
+
+
+.stats{
+    margin-top: -15px;
+}
