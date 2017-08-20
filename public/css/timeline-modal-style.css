@@ -25,7 +25,7 @@
     text-align: left;
 }
 
-.commenting-posting{
+.commenting-posting {
     text-align: left;
 }
 
@@ -76,15 +76,30 @@ a:not([href]):not([tabindex]) {
     color: #000000;
 }
 
-
-.stats{
+.stats {
     margin-top: -15px;
 }
 
-.fa-heart{
+.fa-heart {
     color: e93939;
 }
 
-.fa-heart:hover{
+.fa-heart:hover {
     color: a50a0a;
+}
+
+.fa-thumbs-up {
+    color: #5b5757;
+}
+
+.fa-thumbs-up:hover {
+    color: #ccc7c7;
+}
+
+.fa-commenting {
+    color: #60a2e5;
+}
+
+.fa-commenting:hover {
+    color: #60a2e5;
 }
