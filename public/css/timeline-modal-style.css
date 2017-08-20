@@ -97,9 +97,17 @@ a:not([href]):not([tabindex]) {
 }
 
 .fa-commenting {
-    color: #60a2e5;
+    color: #6491dc;
 }
 
 .fa-commenting:hover {
     color: #60a2e5;
+}
+
+.fa-share {
+    color: #e2835d;
+}
+
+.fa-share:hover {
+    color: #f2b197;
 }
