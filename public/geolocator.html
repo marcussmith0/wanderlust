@@ -7,69 +7,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="javascript/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="javascript/jquery.exif.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/geolocator.css"> 
+    <link href="./css/navbar.css" rel="stylesheet">
     <title>Geo-Locator</title>
-
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-
-        #app {
-            width: 30%;
-        }
-
-        #map {
-            margin-left: 10px;
-            height: 600px;
-            width: 500px;
-        }
-        /* Optional: Makes the sample page fill the window. */
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #floating-panel {
-            position: absolute;
-            top: 10px;
-            left: 25%;
-            z-index: 5;
-            background-color: #fff;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: 'Roboto', 'sans-serif';
-            line-height: 30px;
-            padding-left: 10px;
-        }
-
-
-
-        #latlng {
-            width: 225px;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="app"></div>
-    <label class="file-upload-container" for="file">
-        <input type="file" id="file" style="display: none;"/>
-            Select a File to Upload
-    </label>
-    <form id="myform">
-        <img id="img-preview" />
-    </form>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">WanderLust</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto navbar-center">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Followers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Memories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bucketlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
+                <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#">BucketList</a>
+          </li> -->
+            </ul>
+
+            <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button>
+            <!-- <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+
     
+        <div class="page-header">
+            <h2>Don't forget to document your vacation!!</h2>
+            <p>
+                <em>Upload your images, and we'll plot out your trip!</em>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="app"></div>
+                <label class="file-upload-container" for="file">
+                    <input type="file" id="file" style="display: none;"/>
+                    Select a File to Upload
+                </label>
+            </div>
+            <div class="col-lg-7">
+                <form id="myform">
+                    <img id="img-preview" class="img-fluid"/>
+                </form>
+            </div>
+            <div class="col-lg-1"></div>
+            <!-- <div class="col-lg-1"></div> -->
+        </div>
+
 
     <script>
         // This code block extracts the GPS data from the EXIF object and pushes them into an array of coordinates
         // --------------------------------------------------------------------------------------------------------------- 
         var coords = [];
+        var picUrl = [];
 
         var someCallback = function (exifObject) {
             // Extract the GPS coordinates from each photo uploaded.
@@ -87,52 +103,62 @@
 
 
 
+        // This code sends a POST to the Cloudinary API, which stores the images.  Once the images are saved, they are accessed for display on the map 
+        // and in the Image Preview section.
+   
+        var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dmekb5dug/upload';
+        var CLOUDINARY_UPLOAD_PRESET = 'r7lvwcam';
+        var imgPreview = document.getElementById('img-preview');
+        var fileUpload = document.getElementById('file');
+
+
+        $(document).ready(
+            fileUpload.addEventListener('change', function (event) {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 2,
+                    center: { lat: 40.731, lng: -73.997 }
+                });
+                var infowindow = new google.maps.InfoWindow;
+                var files = event.target.files[0];
+                console.log("files: ", files);
+                console.log("Event: ", event);
+                var formData = new FormData();
+                formData.append('file', files);
+                formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+                axios({
+                    url: CLOUDINARY_URL,
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data: formData
+                }).then(function (res) {
+                    console.log("Res: ", res);
+                    imgPreview.src = res.data.secure_url;
+                    picUrl = res.data.secure_url;
+                    geocodeLatLng(new google.maps.Geocoder, map, infowindow, picUrl);
+                }).catch(function (err) {
+                    console.error("Error: ", err);
+                });
+            })
+        );
 
         // This function initializes the map, and sets the default parameters
         // ----------------------------------------------------------------------------------------------------------------
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
+                zoom: 2,
                 center: { lat: 40.731, lng: -73.997 }
             });
             // var geocoder = new google.maps.Geocoder;
-            var infowindow = new google.maps.InfoWindow;
+            // var infowindow = new google.maps.InfoWindow;
 
 
             $('#file').change(function () {
                 try {
                     $(this).fileExif(function (exifObject) {
                         someCallback(exifObject);
-                        var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dmekb5dug/upload';
-                        var CLOUDINARY_UPLOAD_PRESET = 'r7lvwcam';
-
-                        var imgPreview = document.getElementById('img-preview');
-                        var fileUpload = document.getElementById('file');
-
-                        fileUpload.addEventListener('change', function (event) {
-                            var files = event.target.files[0];
-                            console.log("Event: ", event);
-                            var formData = new FormData();
-                            formData.append('file', files);
-                            formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-
-                            axios({
-                                url: CLOUDINARY_URL,
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/x-www-form-urlencoded'
-                                },
-                                data: formData
-                            }).then(function (res) {
-                                console.log("Res: ", res);
-                                imgPreview.src = res.data.secure_url;
-                            }).catch(function (err) {
-                                console.error("Error: ", err);
-                            });
-
-                        });
-                        geocodeLatLng(new google.maps.Geocoder, map, infowindow);
-
                     })
                 }
                 catch (e) {
@@ -145,31 +171,32 @@
 
 
 
-        // This function updates the map with a new marker when a new image is uploaded.
+        // These functions update the map with a new marker when a new image is uploaded.
         // -----------------------------------------------------------------------------------------------------------------
-        function geocodeLatLng(geocoder, map, infowindow) {
-            // var input = document.getElementById('latlng').value;
-            // console.log("input:", input);
-            // var latlngStr = input.split(',', 2);
-            // var latlng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
-            // console.log("latlng: ", latlng)
+        function geocodeLatLng(geocoder, map, infowindow, picUrl) {
             console.log("coords: ", coords);
             for (var i = 0; i < coords.length; i++) {
                 console.log("coords.value: ", coords[i]);
-                addMarker(geocoder, coords[i], map, infowindow);
+                addMarker(geocoder, coords[i], map, infowindow, picUrl);
             }
         };
 
-        function addMarker(geocoder, coord, map, infowindow) {
+        function addMarker(geocoder, coord, map, infowindow, picUrl) {
             geocoder.geocode({ 'location': coord }, function (results, status) {
+                console.log("Results: ", results);
+                console.log("Status: ", status);
+                console.log("picUrl: ", picUrl);
                 if (status === 'OK') {
                     if (results[0]) {
-                        map.setZoom(12);
+                        map.setZoom(8);
                         var marker = new google.maps.Marker({
                             position: coord,
-                            map: map
+                            map: map,
+                            infoWindow: {
+                                content: '<img src="picUrl"/>'
+                            }
                         });
-                        infowindow.setContent(results.formatted_address);
+                        console.log(marker);
                         infowindow.open(map, marker);
                     } else {
                         window.alert('No results found');
