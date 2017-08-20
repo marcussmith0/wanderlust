@@ -59,13 +59,6 @@ h5.modal-title {
     }
 }
 
-hr {
-    border: none;
-    border-left: 1px solid hsl(60, 3%, 75%);
-    height: 50vh;
-    width: 1px;
-}
-
 a:not([href]):not([tabindex]) {
     /* color: inherit; */
     color: #ffffff;
