@@ -30,12 +30,24 @@ border-radius: 50em;
 
 .follower1 { 
     position: relative; 
-    width: 100%; /* for IE 6 */
- }
- 
- .followerName { 
-    position: absolute; 
-    top: 200px; 
-    left: 0; 
     width: 100%; 
  }
+ 
+ .followerName1 { 
+    position: absolute; 
+    top: 178px; 
+    left: 26px; 
+    width: 100%; 
+    color:#ffffff;
+    text-shadow: 1px 1px 2px black; 
+ }
+
+p.follower-album{
+    position: absolute; 
+    top: 205px; 
+    left: 26px; 
+    width: 100%; 
+    color:#ffffff;
+    text-shadow: 1px 1px 2px black; 
+
+}
