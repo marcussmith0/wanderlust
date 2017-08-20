@@ -16,9 +16,17 @@
 }
 
 .modal-content {
-    -webkit-border-radius: 0px !important;
+    /* -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
-    border-radius: 25px !important;
+    border-radius: 25px !important; */
+}
+
+.name-post {
+    text-align: left;
+}
+
+.commenting-posting{
+    text-align: left;
 }
 
 h5.modal-title {
