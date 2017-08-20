@@ -28,7 +28,7 @@ var userSchema = new Schema({
     
     favorites: [{
         type: Schema.Types.ObjectId,
-        ref: "Post"
+        ref: "Album"
     }],
 
     liked_comments: [{
