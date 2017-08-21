@@ -1,5 +1,6 @@
 .follower-grid {
-    column-count: 3;
+    /* column-count: 3; */
+    column-count: 2;
     column-gap: 10px;
     column-width: 8px;
 }
