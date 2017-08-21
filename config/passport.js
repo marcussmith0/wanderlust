@@ -63,6 +63,8 @@ module.exports = function(passport) {
                         newUser.google.token = token;
                         newUser.google.name  = profile.displayName;
                         newUser.google.email = profile.emails[0].value; // pull the first email
+                        newUser.google.profile_image = profile.photos[0].value;
+
 
                         newUser.save(function(err) {
                             if (err)
@@ -80,6 +82,8 @@ module.exports = function(passport) {
                 user.google.token = token;
                 user.google.name  = profile.displayName;
                 user.google.email = profile.emails[0].value; // pull the first email
+                user.google.profile_image = profile.photos[0].value;
+
 
                 user.save(function(err) {
                     if (err)
