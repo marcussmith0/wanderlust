@@ -48,7 +48,7 @@ module.exports = {
 
         });
             
-        res.render('pages/profile', {user: user, reqUser: req.user, newsFeed: newsFeed});
+        res.render('pages/followers', {user: user, reqUser: req.user, newsFeed: newsFeed});
     });
   },
 
