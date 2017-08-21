@@ -49,6 +49,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Routes
+require('./routes/yelp-routes')(app);
 require('./routes/routes')(app);
 require("./routes/auth-routes")(app, passport);
 
