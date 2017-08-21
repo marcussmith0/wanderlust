@@ -19,7 +19,7 @@ module.exports = {
     
   home: function (req, res) {
 
-    res.render('pages/followers');
+    res.render('pages/index');
   },
 
   profile: function (req, res) {
