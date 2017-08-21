@@ -11,6 +11,7 @@ var flash        = require('connect-flash');
 var passport     = require('passport');
 // TOOL TO MAKE AJAX REQUESTS
 var fetch = require('node-fetch');
+var querystring = require('querystring');
 
 
 var app = express();
@@ -49,13 +50,8 @@ require('./routes/routes')(app);
 require("./routes/auth-routes")(app, passport);
 
 var port = app.get('port');
-app.listen(port, function () {
-    console.log('App running at ' + port);
-});
-=======
 
 // TOOL TO MAKE URL STRINGS: https://nodejs.org/api/querystring.html
-var querystring = require('querystring');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -104,4 +100,6 @@ app.get('/api/:postalCode', function (req, res) {
     });
 });
 
-
+app.listen(port, function () {
+    console.log('App running at ' + port);
+});
