@@ -1,7 +1,7 @@
 // ./routes.js
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
-var controller = require('./../app/controller');
+var controller = require('./../controller/controller');
 
 
 module.exports = function (app) {

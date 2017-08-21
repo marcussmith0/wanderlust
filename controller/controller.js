@@ -1,10 +1,10 @@
 const cloudinary = require("cloudinary");
 const mongoose   = require("mongoose");
 
-const Photo   = require("./Photo");
-const Comment = require("./Comment");
-const User    = require("./User");
-const Album   = require("./Album");
+const Photo   = require("./../models/Photo");
+const Comment = require("./../models/Comment");
+const User    = require("./../models/User");
+const Album   = require("./../models/Album");
 
 
 mongoose.Promise = global.Promise;
@@ -19,8 +19,7 @@ module.exports = {
     
   home: function (req, res) {
 
-    res.render('pages/home');
-
+    res.render('pages/followers');
   },
 
   profile: function (req, res) {
