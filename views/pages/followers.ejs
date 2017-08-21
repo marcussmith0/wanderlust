@@ -62,14 +62,16 @@
             </ul>
             <div class="user-icon">
 
-                if (user.google.token === reqUser.google.token) {
-                    <a href="#"><img src="<%= reqUser.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, <%= reqUser.google.name %></strong></a>
+                <% if (user.google.token === reqUser.google.token) { %>
+                    <% console.log(user.google.profile_image)%>
+
+                    <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong>Hi, <%= reqUser.google.name %></strong></a>
                 <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
                 <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
-                }
+               <% } %>
                 
             </div>
         </div>
@@ -150,13 +152,8 @@
                         <img src="/images/thailand.jpg" alt>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
-
 
         <hr class="featurette-divider">
 
