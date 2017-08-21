@@ -22,6 +22,11 @@ module.exports = {
     res.render('pages/index');
   },
 
+  messages: function (req, res) {
+
+    res.render('pages/messages');
+  },
+
   profile: function (req, res) {
 
     var id = req.params.id;
