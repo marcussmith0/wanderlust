@@ -1,3 +1,16 @@
+
+/*Image Slider Caption*/
+
+.d-md-block h1{
+    text-shadow: 1px 1px 2px black; 
+
+}
+
+.d-md-block p{
+    text-shadow: 1px 1px 2px black; 
+}
+
+/*Timeline History*/
 .timeline {
     list-style: none;
     padding: 20px 0 20px;
