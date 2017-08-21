@@ -8,6 +8,8 @@ module.exports = function (app) {
 
     app.get('/', controller.home);
 
+    app.get('/messages', controller.messages);
+
     app.get('/profile/:id', controller.profile);
 
     app.post('/follow/:id', controller.follow);
