@@ -11,6 +11,7 @@ var flash        = require('connect-flash');
 var passport     = require('passport');
 
 var app = express();
+const PORT = process.env.PORT || 8080;
 
 require('./config/passport')(passport);
 mongoose.connect('mongodb://localhost/cloudinary-instagram');
@@ -37,8 +38,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
-app.set('PORT', process.env.PORT || 8080);
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
