@@ -10,15 +10,23 @@ var session      = require('express-session');
 var flash        = require('connect-flash');
 var passport     = require('passport');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
 // TOOL TO MAKE AJAX REQUESTS
 var fetch = require('node-fetch');
 var querystring = require('querystring');
 >>>>>>> master
 
+<<<<<<< HEAD
 const PORT = process.env.PORT || 8080;
 
 var url = process.env.MONGODB_URI || 'mongodb://localhost/cloudinary-instagram';
+=======
+=======
+>>>>>>> cfc2e24c9c3e9114b203d71478ac8d322dc8a0b4
+>>>>>>> master
 
 var app = express();
 
@@ -62,9 +70,12 @@ require('./routes/routes')(app);
 require("./routes/auth-routes")(app, passport);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.listen(PORT, function () {
     console.log('App running at ' + PORT);
 =======
+=======
+>>>>>>> master
 var port = app.get('port');
 
 // TOOL TO MAKE URL STRINGS: https://nodejs.org/api/querystring.html
@@ -118,5 +129,12 @@ app.get('/api/:postalCode', function (req, res) {
 
 app.listen(port, function () {
     console.log('App running at ' + port);
+<<<<<<< HEAD
+>>>>>>> master
+=======
+=======
+app.listen(PORT, function () {
+    console.log('App running at ' + PORT);
+>>>>>>> cfc2e24c9c3e9114b203d71478ac8d322dc8a0b4
 >>>>>>> master
 });
