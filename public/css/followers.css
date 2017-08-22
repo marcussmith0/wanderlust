@@ -61,8 +61,25 @@ p.userName{
     color:#000000;
    
 }
+/*End Mini Links*/
 
-.mini-links ul li a:hover{
+.quick-links{
+text-align:left;
+}
+
+.quick-links ul li{
+    display: block;
+ margin-left:-40px;
+}
+
+.quick-links ul li a{
+
+    margin:10px;
+    color:#000000;
+   
+}
+
+.quick-links ul li a:hover{
     
         margin:3px;
         color:#858181;
@@ -83,7 +100,7 @@ p.userName{
 
 .followerName1 {
     position: absolute;
-    top: 178px;
+    top: 173px;
     left: 26px;
     width: 100%;
     color: #ffffff;
@@ -92,7 +109,7 @@ p.userName{
 
 p.follower-album1 {
     position: absolute;
-    top: 205px;
+    top: 197px;
     left: 26px;
     width: 100%;
     color: #ffffff;
