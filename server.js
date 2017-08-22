@@ -9,6 +9,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var flash        = require('connect-flash');
 var passport     = require('passport');
+
 const PORT = process.env.PORT || 8080;
 
 var url = process.env.MONGODB_URI || 'mongodb://localhost/cloudinary-instagram';
