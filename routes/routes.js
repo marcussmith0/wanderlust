@@ -35,7 +35,7 @@ module.exports = function (app) {
     
     app.post('/update', controller.update);
 
-    app.post('/destroy', controller.destroy);
+    app.post('/destroy/:id', controller.destroy);
 
     app.get('/account/:id', controller.find);
 
