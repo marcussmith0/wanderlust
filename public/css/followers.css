@@ -40,6 +40,24 @@ p.card-text{
 /*End User Profile Tab*/
 
 
+/*Mini Link Nav*/
+
+.mini-links{
+    text-align:center;
+    margin-left:-60px;
+}
+
+.mini-links ul li{
+    display: inline;
+}
+
+.mini-links ul li a{
+
+    margin:5px;
+   
+}
+
+
 /*Follower User Names & Album Titles*/
 
 .follower1 {
