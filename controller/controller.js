@@ -130,10 +130,13 @@ module.exports = {
 
   get_albums: function (req, res) {
 
-    User.findById(req.params.id, function (err, albums) {
+    var id = req.params.id;
+
+    User.findById(id).populate("albums").exec(function (err, user) {
         if (err) res.send(err);
 
-        res.render(`pages/albums`, {user: user, reqUser: reqUser});
+
+        res.render(`pages/albums`, {user: user, reqUser: req.user});
     });
 
   },
@@ -163,7 +166,7 @@ module.exports = {
                 res.send(err);
             });
 
-            res.redirect(`/albums/${req.user._id}`);
+            res.redirect(`/user_albums/${req.user._id}`);
         })
     });
   },

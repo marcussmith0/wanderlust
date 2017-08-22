@@ -15,7 +15,7 @@ module.exports = function (app) {
     app.post('/follow/:id', controller.follow);
     app.post('/unfollow/:id', controller.unfollow);
 
-    app.post('/album', controller.album);
+    app.post('/album', multipartMiddleware, controller.album);
 
     app.get('/user_albums/:id', controller.get_albums);
 

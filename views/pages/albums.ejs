@@ -64,7 +64,7 @@
             </ul>
             <div class="user-icon">
                 <% if (user.google.token === reqUser.google.token) { %>
-                    <% console.log(user.google.profile_image)%>
+                    <% console.log(user.google.profile_image) %>
 
                     <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong>Hi, <%= reqUser.google.name %></strong></a>
                 <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
@@ -111,7 +111,7 @@
 
                                 <div class="row">
                                     <div class="card">
-                                        <img data-src="<%=album.featured_image%>" alt="Card image cap">
+                                        <img src="<%=album.featured_image%>" alt="Card image cap"/>
                                         <p class="card-text"><strong><%= album.title %></strong></p>
                                         <p class="card-text"><%= album.description %></p>
                                     </div>
