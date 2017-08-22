@@ -44,7 +44,7 @@ p.card-text{
 
 .mini-links{
     text-align:center;
-    margin-left:-55px;
+    margin-left:-40px;
 }
 
 .mini-links ul li{
@@ -53,9 +53,18 @@ p.card-text{
 
 .mini-links ul li a{
 
-    margin:5px;
+    margin:3px;
+    color:#000000;
    
 }
+
+.mini-links ul li a:hover{
+    
+        margin:3px;
+        color:#858181;
+        text-decoration: none;
+       
+    }
 
 
 /*Follower User Names & Album Titles*/
