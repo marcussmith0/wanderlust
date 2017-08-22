@@ -95,12 +95,15 @@
                         <div class="container">
                             <h1 class="jumbotron-heading"><%= album.title %></h1>
                             <p class="lead text-muted"><%= album.description %></p>
+
                             <p>
-                                <a href="/upload/<%= album._id %>" class="btn btn-primary">Add New Photo</a>
+                                <form action='/upload/<%= album._id %>' enctype="multipart/form-data" method='POST'>
+                                    <input class='form-group' name='image' type='file'>
+                                    <button type="submit" class="btn btn-primary btn-lg">Add Photos</button>
+                                </form>
                             </p>
-                            <p>
-                                <a href="/upload/<%= album._id %>" class="btn btn-primary">Add New Photo</a>
-                            </p>
+
+
 
                             <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
 
