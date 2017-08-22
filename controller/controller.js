@@ -130,27 +130,33 @@ module.exports = {
 
   album: function(req, res) {
 
-      var newAlbum = new Album({
 
-          title: req.body.title,
-          description: req.body.description,
-          _creator: req.user._id
+    cloudinary.v2.uploader.upload(req.files.image.path,
+          { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
+          function(err, result) {
 
-      });
+          var newAlbum = new Album({
 
-      User.findByIdAndUpdate(req.user._id, {$push: {albums: newAlbum}}, {new: true}, function(err, user) {
+            title: req.body.title,
+            description: req.body.description,
+            _creator: req.user._id,
+            featured_image: result.url
 
-        newAlbum.save().then(function (err, result) {
-             if (err) throw err;
+          });
 
-        }).catch(function(reason) {
+        User.findByIdAndUpdate(req.user._id, {$push: {albums: newAlbum}}, {new: true}, function(err, user) {
 
-             res.send(err);
-        });
+            newAlbum.save().then(function (err, result) {
+                if (err) throw err;
 
-        res.redirect(`/profile/${req.user._id}`);
-      })
+            }).catch(function(reason) {
 
+                res.send(err);
+            });
+
+            res.redirect(`/profile/${req.user._id}`);
+        })
+    });
   },
 
   collection: function (req, res) {
