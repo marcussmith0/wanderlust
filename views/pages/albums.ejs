@@ -63,12 +63,16 @@
           </li> -->
             </ul>
             <div class="user-icon">
-                <a href="#"><img src="./images/user-avatar.jpg" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, Joe Doe</strong></a>
+                <% if (user.google.token === reqUser.google.token) { %>
+                    <% console.log(user.google.profile_image)%>
+
+                    <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong>Hi, <%= reqUser.google.name %></strong></a>
                 <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
                 <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
+               <% } %>
             </div>
         </div>
     </nav>
@@ -85,72 +89,37 @@
         <div class="row">
             <div class="col-lg-12">
 
+                <% if (user.google.token === reqUser.google.token) { %>
 
-                <section class="jumbotron text-center">
-                    <div class="container">
-                        <h1 class="jumbotron-heading">Your Albums</h1>
-                        <p class="lead text-muted">Make your trip last forever. Relive your experiences and share them with us. You can upload, categorize, tag, and share your pictures.</p>
-                        <p>
-                            <a href="/new" class="btn btn-primary">Create New Album</a>
-                        </p>
-                    </div>
-                </section>
+                    <section class="jumbotron text-center">
+                        <div class="container">
+                            <h1 class="jumbotron-heading">Your Albums</h1>
+                            <p class="lead text-muted">Make your trip last forever. Relive your experiences and share them with us. You can upload, categorize, tag, and share your pictures.</p>
+                            <p>
+                                <a href="/new" class="btn btn-primary">Create New Album</a>
+                            </p>
+                        </div>
+                    </section>
 
-                <div class="album text-muted">
-                    <div class="container">
+                <% } %>
 
-                        <div class="row">
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
+                <% if (user.google.token === reqUser.google.token) { %>
+                    <% user.albums.forEach(function(album, index) { %>
 
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
+                        <div class="album text-muted">
+                            <div class="container">
 
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
+                                <div class="row">
+                                    <div class="card">
+                                        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                                        <p class="card-text"><strong><% album.title %></strong></p>
+                                        <p class="card-text"><% album.description %></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
+                    <% }); %>
+                <% } %>
 
 
 
