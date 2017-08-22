@@ -93,10 +93,10 @@
 
                     <section class="jumbotron text-center">
                         <div class="container">
-                            <h1 class="jumbotron-heading">Your Albums</h1>
-                            <p class="lead text-muted">Make your trip last forever. Relive your experiences and share them with us. You can upload, categorize, tag, and share your pictures.</p>
+                            <h1 class="jumbotron-heading"><%= album.title %></h1>
+                            <p class="lead text-muted"><%= album.description %></p>
                             <p>
-                                <a href="/new" class="btn btn-primary">Create New Album</a>
+                                <a href="/new" class="btn btn-primary">Add New Photo</a>
                             </p>
                         </div>
                     </section>
@@ -104,19 +104,15 @@
                 <% } %>
 
                 <% if (user.google.token === reqUser.google.token) { %>
-                    <% user.albums.forEach(function(album, index) { %>
+                    <% album.photos.forEach(function(photo, index) { %>
 
                         <div class="album text-muted">
                             <div class="container">
 
                                 <div class="row">
-                                    <a href="/album/<%= album._id %>">
-                                        <div class="card">
-                                            <img src="<%=album.featured_image%>" alt="Card image cap"/>
-                                            <p class="card-text"><strong><%= album.title %></strong></p>
-                                            <p class="card-text"><%= album.description %></p>
-                                        </div>
-                                    </a>
+                                    <div class="card">
+                                        <img src="<%=photo.image%>" alt="Card image cap"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

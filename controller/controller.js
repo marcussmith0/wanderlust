@@ -179,8 +179,10 @@ module.exports = {
         User.findById(album._creator, function (err, user) {
             if (err) res.send(err);
 
+            console.log("THIS IS THE ALBUM OBJECt", album);
+            console.log("THIS IS THE user OBJECt", user);
 
-            res.render('pages/albums', {album: album, user: user, reqUser: req.user});
+            res.render('pages/post', {album: album, user: user, reqUser: req.user});
         })
     });
   },
