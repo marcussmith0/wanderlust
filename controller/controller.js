@@ -128,8 +128,12 @@ module.exports = {
       });
   },
 
-  album: function(req, res) {
+  get_albums: function (req, res) {
 
+
+  },
+
+  album: function(req, res) {
 
     cloudinary.v2.uploader.upload(req.files.image.path,
           { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
@@ -154,7 +158,7 @@ module.exports = {
                 res.send(err);
             });
 
-            res.redirect(`/album/${req.user._id}`);
+            res.redirect(`/albums/${req.user._id}`);
         })
     });
   },
