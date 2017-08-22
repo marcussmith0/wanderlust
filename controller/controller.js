@@ -130,6 +130,11 @@ module.exports = {
 
   get_albums: function (req, res) {
 
+    User.findById(req.params.id, function (err, albums) {
+        if (err) res.send(err);
+
+        res.render(`pages/albums`, {user: user, reqUser: reqUser});
+    });
 
   },
 
