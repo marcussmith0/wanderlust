@@ -27,18 +27,24 @@
       aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-    <a class="navbar-brand" href="#">Carousel</a>
+    <a class="navbar-brand" href="#">Wanderlust</a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#"><i class="fa fa-users" aria-hidden="true"></i>Followers </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Timeline<i class="fa fa-clock-o" aria-hidden="true"></i> </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="#">Albums</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Discover</a>
+            </li>
+        <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -149,7 +155,7 @@
                               <a href="#">Following</a>
                              </div> -->
 
-                <a href="#" class="btn btn-primary">View Timeline</a>
+                <a href="./timeline.html" class="btn btn-primary">View Timeline</a>
               </div>
 
             </div>
@@ -159,13 +165,24 @@
           <br />
           <div class="row">
             <div class="card" style="width: 20rem;">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <img class="card-img-top" src="./images/suitcase.jpg" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title">Card title</h4>
+                <!-- <h4 class="card-title">Card title</h4> -->
 
-                <p class="card-text">
+
+                <div class="quick-links">
+                  <ul>
+                    <li><a  href="./pinboard.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i> PinBoard </a></li>
+             
+                    <li><a  href="./bucketlist.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Bucketlist</a></li>
+              
+                    <li><a  href="./messages.html"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a><li>
+                    </li>
+              </div>
+
+                <!-- <p class="card-text">
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
               </div>
 
             </div>
@@ -177,7 +194,7 @@
           <div class="follower-grid ">
             <div class="gridthings">
               <div class="follower1">
-                <img src="./images/couples.jpg" alt>
+                <img src="./images/pokemon.jpg" alt>
                 <h3 class="followerName1">Gotta Catch 'Em All </h3>
                 <p class="follower-album1">Erick Rivas</p>
               </div>
