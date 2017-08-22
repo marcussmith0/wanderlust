@@ -24,6 +24,21 @@
     color: #ffffff;
 }
 
+/*User Profile Tab*/
+h4.card-title{
+    font-weight:bold;
+    text-align: left;
+}
+
+p.userName{
+    text-align: left;
+}
+
+p.card-text{
+    text-align: left;
+}
+/*End User Profile Tab*/
+
 
 /*Follower User Names & Album Titles*/
 
