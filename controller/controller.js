@@ -154,7 +154,7 @@ module.exports = {
                 res.send(err);
             });
 
-            res.redirect(`/profile/${req.user._id}`);
+            res.redirect(`/album/${req.user._id}`);
         })
     });
   },
