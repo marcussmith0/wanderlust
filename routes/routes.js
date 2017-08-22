@@ -17,7 +17,7 @@ module.exports = function (app) {
 
     app.post('/album', controller.album);
 
-    app.get('/album/:id', controller.collection);
+    app.get('/albums/:id', controller.collection);
 
     app.post('/upload/:id', multipartMiddleware, controller.upload);
 
