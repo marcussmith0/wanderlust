@@ -44,7 +44,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="./albums.html"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
+                    <a class="nav-link" href="/user_albums/<%= user._id%>"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./discover.html"><i class="fa fa-globe" aria-hidden="true"></i> Discover</a>
@@ -72,7 +72,11 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
-               <% } %>
+               <% } else { %>
+
+                    <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong><%= user.google.name %></strong></a>
+
+                <% } %>
             </div>
         </div>
     </nav>

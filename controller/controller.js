@@ -240,12 +240,13 @@ module.exports = {
 
   destroy: function (req, res) {
       var imageId = req.body.image_id;
+      var albumId = req.params.id;
 
       cloudinary.v2.uploader.destroy(imageId, function (error, result) {
               Photo.findOneAndRemove({ image_id: imageId }, function(err) {
                   if (err) res.send(err);
 
-                  res.redirect('/');
+                res.render('pages/post', {album: album, user: user, reqUser: req.user});
               });
           });
   },
