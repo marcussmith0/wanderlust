@@ -138,7 +138,6 @@ module.exports = {
 
         res.render(`pages/albums`, {user: user, reqUser: req.user});
     });
-
   },
 
   album: function(req, res) {
