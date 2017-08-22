@@ -274,7 +274,8 @@ module.exports = {
         var newComment = new Comment({
             text: req.body.comment,
             created_at: Date.now(),
-            _creator: req.user.google.name
+            _creator: req.user.google.name,
+            _creator_avatar: req.user.google.profile_image
         });
 
         Album.findByIdAndUpdate(id, { $push: {comments: newComment} }, {new: true}, function(err, album) {
