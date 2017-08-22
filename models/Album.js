@@ -14,6 +14,9 @@ var albumSchema = new Schema({
         minlength: 2
     },
 
+    featured_image: String,
+    image_id: String,
+
     photos: [{
         type: Schema.Types.ObjectId,
         ref: "Photo"

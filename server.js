@@ -9,14 +9,20 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var flash        = require('connect-flash');
 var passport     = require('passport');
+<<<<<<< HEAD
 // TOOL TO MAKE AJAX REQUESTS
 var fetch = require('node-fetch');
 var querystring = require('querystring');
 
+=======
+>>>>>>> cfc2e24c9c3e9114b203d71478ac8d322dc8a0b4
 
 var app = express();
+const PORT = process.env.PORT || 8080;
 
 require('./config/passport')(passport);
+mongoose.connect('mongodb://localhost/cloudinary-instagram');
+
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -29,13 +35,16 @@ app.use(session({ secret: "thisisanapp",
                             resave: true,
                             saveUninitialized: true
                         }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-mongoose.connect('mongodb://localhost/cloudinary-instagram');
-
-app.set('port', process.env.PORT || 8080);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -46,9 +55,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Routes
+require('./routes/yelp-routes')(app);
 require('./routes/routes')(app);
 require("./routes/auth-routes")(app, passport);
 
+<<<<<<< HEAD
 var port = app.get('port');
 
 // TOOL TO MAKE URL STRINGS: https://nodejs.org/api/querystring.html
@@ -102,4 +113,8 @@ app.get('/api/:postalCode', function (req, res) {
 
 app.listen(port, function () {
     console.log('App running at ' + port);
+=======
+app.listen(PORT, function () {
+    console.log('App running at ' + PORT);
+>>>>>>> cfc2e24c9c3e9114b203d71478ac8d322dc8a0b4
 });
