@@ -17,7 +17,7 @@ module.exports = function (app) {
 
     app.post('/album', controller.album);
 
-    app.get('/album', controller.get_albums);
+    app.get('/user_albums/:id', controller.get_albums);
 
     app.get('/album/:id', controller.collection);
 
