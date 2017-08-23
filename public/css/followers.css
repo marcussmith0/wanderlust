@@ -1,5 +1,12 @@
+.btn-group{
+    margin-right: 80px;
+}
+
+
+
 .follower-grid {
-    column-count: 3;
+    /* column-count: 3; */
+    column-count: 2;
     column-gap: 10px;
     column-width: 8px;
 }
@@ -23,6 +30,72 @@
     color: #ffffff;
 }
 
+/*User Profile Tab*/
+h4.card-title{
+    font-weight:bold;
+    text-align: left;
+}
+
+p.userName{
+    text-align: left;
+}
+
+p.card-text{
+    text-align: left;
+}
+
+p.userName{
+    margin-top:10px;
+}
+/*End User Profile Tab*/
+
+
+/*Mini Link Nav* - Writing this incorrectly =(*/
+
+.mini-links{
+    text-align:center;
+    margin-left:-40px;
+}
+
+.mini-links ul li{
+    display: inline;
+}
+
+.mini-links ul li a{
+
+    margin:3px;
+    color:#000000;
+   
+}
+/*End Mini Links*/
+
+.quick-links{
+text-align:left;
+}
+
+.quick-links ul li{
+    display: block;
+ margin-left:-40px;
+}
+
+.quick-links ul li a{
+
+    margin:10px;
+    color:#000000;
+   
+}
+
+.quick-links ul li a:hover{
+    
+        margin:3px;
+        color:#858181;
+        text-decoration: none;
+       
+    }
+
+    .btn btn-primary quick-time{
+        text-align:left;
+    }
 
 /*Follower User Names & Album Titles*/
 
@@ -33,7 +106,7 @@
 
 .followerName1 {
     position: absolute;
-    top: 178px;
+    top: 173px;
     left: 26px;
     width: 100%;
     color: #ffffff;
@@ -42,10 +115,11 @@
 
 p.follower-album1 {
     position: absolute;
-    top: 205px;
+    top: 197px;
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -68,6 +142,7 @@ p.follower-album2 {
     top: 205px;
     left: 26px;
     width: 100%;
+    font-size:20px;
     color: #ffffff;
     text-shadow: 1px 1px 2px black;
 }
@@ -92,6 +167,7 @@ p.follower-album3 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -115,6 +191,7 @@ p.follower-album4 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -138,6 +215,7 @@ p.follower-album5 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -161,6 +239,7 @@ p.follower-album6 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -171,7 +250,7 @@ p.follower-album6 {
 
 .followerName7 {
     position: absolute;
-    top: 178px;
+    top: 165px;
     left: 26px;
     width: 100%;
     color: #ffffff;
@@ -180,10 +259,11 @@ p.follower-album6 {
 
 p.follower-album7 {
     position: absolute;
-    top: 205px;
+    top:192px;
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -207,6 +287,7 @@ p.follower-album8 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -230,6 +311,7 @@ p.follower-album9 {
     left: 26px;
     width: 100%;
     color: #ffffff;
+    font-size:20px;
     text-shadow: 1px 1px 2px black;
 }
 

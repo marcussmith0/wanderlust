@@ -19,7 +19,12 @@ module.exports = {
     
   home: function (req, res) {
 
-    res.render('pages/followers');
+    res.render('pages/index');
+  },
+
+  messages: function (req, res) {
+
+    res.render('pages/messages');
   },
 
   profile: function (req, res) {
@@ -48,7 +53,7 @@ module.exports = {
 
         });
             
-        res.render('pages/profile', {user: user, reqUser: req.user, newsFeed: newsFeed});
+        res.render('pages/followers', {user: user, reqUser: req.user, newsFeed: newsFeed});
     });
   },
 
@@ -123,29 +128,46 @@ module.exports = {
       });
   },
 
+  get_albums: function (req, res) {
+
+    var id = req.params.id;
+
+    User.findById(id).populate("albums").exec(function (err, user) {
+        if (err) res.send(err);
+
+
+        res.render(`pages/albums`, {user: user, reqUser: req.user});
+    });
+  },
+
   album: function(req, res) {
 
-      var newAlbum = new Album({
+    cloudinary.v2.uploader.upload(req.files.image.path,
+          { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
+          function(err, result) {
 
-          title: req.body.title,
-          description: req.body.description,
-          _creator: req.user._id
+          var newAlbum = new Album({
 
-      });
+            title: req.body.title,
+            description: req.body.description,
+            _creator: req.user._id,
+            featured_image: result.url
 
-      User.findByIdAndUpdate(req.user._id, {$push: {albums: newAlbum}}, {new: true}, function(err, user) {
+          });
 
-        newAlbum.save().then(function (err, result) {
-             if (err) throw err;
+        User.findByIdAndUpdate(req.user._id, {$push: {albums: newAlbum}}, {new: true}, function(err, user) {
 
-        }).catch(function(reason) {
+            newAlbum.save().then(function (err, result) {
+                if (err) throw err;
 
-             res.send(err);
-        });
+            }).catch(function(reason) {
 
-        res.redirect(`/profile/${req.user._id}`);
-      })
+                res.send(err);
+            });
 
+            res.redirect(`/user_albums/${req.user._id}`);
+        })
+    });
   },
 
   collection: function (req, res) {
@@ -156,8 +178,10 @@ module.exports = {
         User.findById(album._creator, function (err, user) {
             if (err) res.send(err);
 
+            console.log("THIS IS THE ALBUM OBJECt", album);
+            console.log("THIS IS THE user OBJECt", user);
 
-            res.render('pages/albums', {album: album, user: user, reqUser: req.user});
+            res.render('pages/post', {album: album, user: user, reqUser: req.user});
         })
     });
   },
@@ -215,12 +239,13 @@ module.exports = {
 
   destroy: function (req, res) {
       var imageId = req.body.image_id;
+      var albumId = req.params.id;
 
       cloudinary.v2.uploader.destroy(imageId, function (error, result) {
               Photo.findOneAndRemove({ image_id: imageId }, function(err) {
                   if (err) res.send(err);
 
-                  res.redirect('/');
+                res.render('pages/post', {album: album, user: user, reqUser: req.user});
               });
           });
   },
@@ -251,7 +276,8 @@ module.exports = {
         var newComment = new Comment({
             text: req.body.comment,
             created_at: Date.now(),
-            _creator: req.user.google.name
+            _creator: req.user.google.name,
+            _creator_avatar: req.user.google.profile_image
         });
 
         Album.findByIdAndUpdate(id, { $push: {comments: newComment} }, {new: true}, function(err, album) {
