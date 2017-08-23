@@ -126,8 +126,12 @@
           <h1 class="jumbotron-heading">Memories</h1>
           <p class="lead text-muted">Collections of all your trips.</p>
           <p>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create Album</button>
-
+            <% if (user.google.token === reqUser.google.token) { %>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Create Album
+              </button>
+            <% } %>
+      
               <a href="./pinboard-test.html" class="btn btn-secondary">View Pinboard</a>
           </p>
       </div>
