@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	console.log("ready")
-})
+});
+
+var mapArray = [];
 
 $('#search-button').click(function(e){
   e.preventDefault();
