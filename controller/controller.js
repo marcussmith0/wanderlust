@@ -24,7 +24,7 @@ module.exports = {
 
   messages: function (req, res) {
 
-    res.render('pages/messages');
+    res.render('pages/sign-in-modal');
   },
 
   profile: function (req, res) {
