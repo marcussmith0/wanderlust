@@ -25,15 +25,17 @@
                         <div class="col-xl-9" id="meow">
                             <div class="modal-header">
 
-                                if (user.google.token === reqUser.google.token) {
+                                <% if (user.google.token === reqUser.google.token) { %>
+                                    <div class="col-4 col-xl-5">
                                     <div class="form-control">
-                                        <form action="/album" enctype="multipart/form-data" method="POST">
+                                        <form action="/upload/<%=album._id%>" enctype="multipart/form-data" method="POST">
                                         <label>Image</label>
                                         <input rows='1' class='form-group' name="image" type="file" />
                                         <button class='btn btn-primary' type="submit">Add New Photo</button>
                                         </form>
                                     </div> 
-                                }
+                                    </div>
+                                <% } %>
 
                                 <h5 class="modal-title" id="exampleModalLabel"><%= album.title %></h5>
                                 <a href="/user_albums/<%= user._id %>"><button class="close" aria-label="Close">
