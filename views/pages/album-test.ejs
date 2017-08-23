@@ -126,21 +126,16 @@
           <h1 class="jumbotron-heading">Memories</h1>
           <p class="lead text-muted">Collections of all your trips.</p>
           <p>
-              <a href="#" class="btn btn-primary">Create album</a>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create Album</button>
+
               <a href="./pinboard-test.html" class="btn btn-secondary">View Pinboard</a>
           </p>
       </div>
   </section>
   <div class="container marketing">
 
-
-
         <div class="row">
                 <div class="col-lg-12">
-    
-    
-              
-    
                     <div class="album text-muted">
                         <div class="container">
     
@@ -196,19 +191,11 @@
     
                         </div>
                     </div>
-               
-           
-    
-    
-    
-    
-    
     
                     <!--End Timeline -->
     
                 </div>
             </div>
-
 
       <hr class="featurette-divider">
 
@@ -222,6 +209,50 @@
       </footer>
 
     </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Create Your Album</h4>
+              </div>
+              <div class="modal-body">
+                  <form action="/album" enctype="multipart/form-data" method="POST">
+
+                    <div class="form-control">
+                        <label>Title</label>
+                        <input rows="2" class='form-group' name="title" placeholder="Title">
+                    </div> 
+
+                    <div class="form-control">
+                        <label>Description</label>
+                        <textarea rows="4" class='form-group' name="description" placeholder="Description"></textarea>
+                    </div> 
+
+                    <div class="form-control">
+                        <label>Image</label>
+                        <input rows='1' class='form-group' name="image" type="file" />
+                    </div> 
+
+                      <button class="btn btn-primary" type="submit">Post</button>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
+
+
+
     <!-- /.container -->
 
 
