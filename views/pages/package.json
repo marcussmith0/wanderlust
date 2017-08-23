@@ -1,0 +1,41 @@
+{
+  "name": "wanderlust",
+  "version": "1.0.0",
+  "description": "Wanderlust travel application",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcussmith0/wanderlust.git"
+  },
+  "author": "Erica R.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcussmith0/wanderlust/issues"
+  },
+  "homepage": "https://github.com/marcussmith0/wanderlust#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.7",
+    "morgan": "^1.8.2",
+    "node-fetch": "^1.7.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth20": "^1.0.0",
+    "cloudinary": "^1.9.0",
+    "connect-multiparty": "^2.0.0",
+    "ejs": "^2.5.2",
+    "method-override": "^2.3.9"
+  },
+  "engines": {
+    "npm": "^3.10.10",
+    "node": "^6.10.*"
+  }
+}
