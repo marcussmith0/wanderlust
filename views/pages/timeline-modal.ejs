@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-xl-9" id="meow">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Beach Waves</h5>
+                                <h5 class="modal-title" id="exampleModalLabel"><%= album.title %></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -34,6 +34,15 @@
 
                                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner" role="listbox">
+
+                                                <% album.photos.forEach(function(photo, index) { %>
+
+                                                    <div class="carousel-item">
+                                                        <img class="d-block img-fluid" src="<%= photo.image %>" alt="Image Slide">
+                                                    </div>
+
+                                                <% }); %>
+
                                                 <div class="carousel-item active">
                                                     <img class="d-block img-fluid" src="/images/gallery1.jpg" alt="First slide">
                                                 </div>
