@@ -131,20 +131,26 @@
               <a href="./pinboard-test.html" class="btn btn-secondary">View Pinboard</a>
           </p>
       </div>
+
   </section>
   <div class="container marketing">
-
         <div class="row">
                 <div class="col-lg-12">
                     <div class="album text-muted">
                         <div class="container">
     
                             <div class="row">
+                              <% user.albums.forEach(function(album, index){ %>
+
                                 <div class="card">
-                                    <img src="/images/vac-gallery1.jpg" alt="Card image cap">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                        This content is a little bit longer.</p>
+                                    <h3><%= album.title %></h3>
+                                    <img src="<%= album.featured_image %>" alt="Card image cap">
+                                    <p class="card-text"><%=album.description%></p>
                                 </div>
+
+                              <% }) %>
+
+                                
                                 <div class="card">
                                     <img src="/images/vac-gallery2.jpg" alt="Card image cap">
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
