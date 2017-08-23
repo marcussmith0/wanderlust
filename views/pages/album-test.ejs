@@ -148,12 +148,13 @@
 
                                 <div class="card">
                                     <h3><%= album.title %></h3>
-                                    <img src="<%= album.featured_image %>" alt="Card image cap">
-                                    <p class="card-text"><%=album.description%></p>
+                                    <a href="/album/<%= album._id %>">
+                                      <img src="<%= album.featured_image %>" alt="Card image cap">
+                                      <p class="card-text"><%=album.description%></p>
+                                    </a>
                                 </div>
 
                               <% }) %>
-
                             </div>
     
                         </div>
