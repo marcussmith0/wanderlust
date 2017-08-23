@@ -151,23 +151,31 @@
             <div class="card" style="width: 20rem;">
               <img class="card-img-top" src="/images/user-profile.jpg" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title">John Doe</h4>
+                <h4 class="card-title"><%= user.google.name %></h4>
                 <p class="userName">@livinglarge</p>
                 <div class="mini-links">
                   <ul>
                     <li>
-                      <a href="#"> 9 Albums
-                                  </a>
+                      <a href="#">
+                         <%= user.albums.length %> 
+                         <% if(user.albums.length === 1) { %>
+                            Album
+                         } else {
+                           Albums
+                        <% } %>
+                      </a>
                     </li>
 
                     <li>
-                      <a href="#"> 3 Followers
-                                  </a>
+                      <a href="#">
+                        <%= user.followers.length %> Followers
+                      </a>
                     </li>
 
                     <li>
-                      <a href="#"> 5 Following
-                                  </a>
+                      <a href="#"> 
+                        <%= user.following.length %> Following
+                      </a>
                     </li>
                   </ul>
 
@@ -181,8 +189,14 @@
                              </div> -->
 
                 <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
+                if (user.google.token === reqUser.google.token) {
 
-                <a href="./timeline-test.html" class="btn btn-primary">Follow</a>
+                } else if (user.followers.indexOf(reqUser._id) === -1){
+                  <a href="./timeline-test.html" class="btn btn-primary">Follow</a>
+                } else {
+                  <a href="./timeline-test.html" class="btn btn-danger">Unfollow</a>
+                }
+
               </div>
 
             </div>
