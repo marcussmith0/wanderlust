@@ -9,7 +9,7 @@ module.exports = function (app) {
     app.get('/', controller.home);
 
     app.get('/messages', controller.messages);
-    app.get('/user-albums', controller.user_albums);
+    app.get('/user-albums/:id', controller.user_albums);
 
     app.get('/profile/:id', controller.profile);
 
