@@ -1,0 +1,41 @@
+.left {
+float: left;
+}
+.both {
+clear: both;
+}
+.file-upload-container {
+width:400px;
+border: 1px solid #efefef;
+padding:10px;
+border-radius: 6px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+background: #fbfbfa;
+}
+.file-upload-override-button {
+position: relative;
+overflow: hidden;
+cursor: pointer;
+background-color:#79bbff;
+}
+.file-upload-override-button:hover {
+background-color:#378de5;
+}
+.file-upload-override-button:active {
+position:relative; top:1px;
+}
+.file-upload-button {
+position: absolute;
+height: 50px;
+top: -10px;
+left: -10px;
+cursor: pointer;
+opacity: 0;
+filter:alpha(opacity=0);
+}
+.file-upload-filename {
+margin-left: 10px;
+height: auto;
+padding: 8px;
+}
