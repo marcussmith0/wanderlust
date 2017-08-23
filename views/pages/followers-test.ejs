@@ -160,7 +160,7 @@
                          <%= user.albums.length %> 
                          <% if(user.albums.length === 1) { %>
                             Album
-                         } else {
+                         <% } else { %>
                            Albums
                         <% } %>
                       </a>
@@ -189,14 +189,17 @@
                              </div> -->
 
                 <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
-                if (user.google.token === reqUser.google.token) {
+                <% if (user.google.token === reqUser.google.token) { %>
 
-                } else if (user.followers.indexOf(reqUser._id) === -1){
-                  <a href="./timeline-test.html" class="btn btn-primary">Follow</a>
-                } else {
-                  <a href="./timeline-test.html" class="btn btn-danger">Unfollow</a>
-                }
-
+                <% } else if (user.followers.indexOf(reqUser._id) === -1){ %>
+                  <form action="/follow/<%= user.id %>" method="POST">
+                    <a class="btn btn-primary">Follow</a>
+                  </form>
+                <% } else { %>
+                  <form action="/unfollow/<%= user.id %>" method="POST">
+                    <a class="btn btn-danger">Unfollow</a>
+                  </form>
+                <% } %>
               </div>
 
             </div>
