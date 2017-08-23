@@ -136,13 +136,8 @@ module.exports = {
         if (err) res.send(err);
 
 
-        res.render(`pages/albums`, {user: user, reqUser: req.user});
+        res.render(`pages/albums-test`, {user: user, reqUser: req.user});
     });
-  },
-
-  user_albums: function (req, res) {
-
-    res.render("pages/album-test");
   },
 
   album: function(req, res) {
