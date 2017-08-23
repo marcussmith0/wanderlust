@@ -9,7 +9,7 @@
     <link rel="icon" href="../../../../favicon.ico">
 
 
-    <title>Wanderlust- Your Timeline</title>
+    <title>Wanderlust - Your Timeline</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -63,12 +63,16 @@
           </li> -->
             </ul>
             <div class="user-icon">
-                <a href="#"><img src="./images/user-avatar.jpg" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, Joe Doe</strong></a>
+                <% if (user.google.token === reqUser.google.token) { %>
+                    <% console.log(user.google.profile_image) %>
+
+                    <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong>Hi, <%= reqUser.google.name %></strong></a>
                 <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
                 <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
+               <% } %>
             </div>
         </div>
     </nav>
@@ -85,89 +89,47 @@
         <div class="row">
             <div class="col-lg-12">
 
+                <% if (user.google.token === reqUser.google.token) { %>
 
-                <section class="jumbotron text-center">
-                    <div class="container">
-                        <h1 class="jumbotron-heading">Memories</h1>
-                        <p class="lead text-muted">Collections of all your trips.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Create album</a>
-                            <a href="#" class="btn btn-secondary">View Pinboard</a>
-                        </p>
-                    </div>
-                </section>
+                    <section class="jumbotron text-center">
+                        <div class="container">
+                            <h1 class="jumbotron-heading"><%= album.title %></h1>
+                            <p class="lead text-muted"><%= album.description %></p>
 
-                <div class="album text-muted">
-                    <div class="container">
+                            <p>
+                                <form action='/upload/<%= album._id %>' enctype="multipart/form-data" method='POST'>
+                                    <input class='form-group' name='image' type='file'>
+                                    <button type="submit" class="btn btn-primary btn-lg">Add Photos</button>
+                                </form>
+                            </p>
+                        </div>
+                    </section>
 
-                        <div class="row">
-                            <div class="card">
-                                <img data-src="./images/test77.jpg" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
+                <% } %>
 
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
+                <% if (user.google.token === reqUser.google.token) { %>
+                    <% album.photos.forEach(function(photo, index) { %>
 
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
-                            </div>
-                            <div class="card">
-                                <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                                    This content is a little bit longer.</p>
+                        <div class="album text-muted">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="card">
+                                        <img src="<%=photo.image%>" alt="Card image cap"/>
+                                    </div>
+                                    <form action="/destroy/<%= album._id %>">
+                                        <input type="hidden" name="image_id" value="<%= photo.image_id %>">
+                                        <button class="btn btn-delete" type="submit"></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-
-
-
-
-
+                    <% }); %>
+                <% } %>
 
                 <!--End Timeline -->
 
             </div>
         </div>
-
-
-
-
-
-
 
 
         <hr class="featurette-divider">
@@ -202,7 +164,7 @@
     <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
         crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
@@ -218,10 +180,16 @@
                 text: "Thumbnail"
             });
         });
+        $(document).ready(function(){
+            $("#myBtn").click(function(){
+                $("#myModal").modal();
+            });
+        });
     </script>
     <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    
 </body>
 
 </html>

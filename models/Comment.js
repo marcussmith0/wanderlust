@@ -23,6 +23,11 @@ var commentSchema = new Schema({
     _creator: {
         type: String,
         required: true
+    },
+
+    _creator_avatar: {
+        type: String,
+        required: true
     }
 
 });
