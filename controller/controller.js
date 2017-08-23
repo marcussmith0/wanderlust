@@ -140,6 +140,11 @@ module.exports = {
     });
   },
 
+  album_create: function (req, res) {
+
+    res.render("pages/album-test");
+  },
+
   album: function(req, res) {
 
     cloudinary.v2.uploader.upload(req.files.image.path,
