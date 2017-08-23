@@ -8,7 +8,8 @@ var userSchema = new Schema({
         id           : String,
         token        : String,
         email        : String,
-        name         : String
+        name         : String,
+        profile_image: String
     },
 
     albums: [{
