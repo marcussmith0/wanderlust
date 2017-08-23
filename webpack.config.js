@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
 
   // This is the entry point or start of our react applicaton
-  entry: "./src/app.js",
+  entry: "./public/src/app.js",
 
   // The plain compiled JavaScript will be output into this file
   output: {
