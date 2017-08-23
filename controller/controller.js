@@ -181,7 +181,7 @@ module.exports = {
             console.log("THIS IS THE ALBUM OBJECt", album);
             console.log("THIS IS THE user OBJECt", user);
 
-            res.render('pages/post', {album: album, user: user, reqUser: req.user});
+            res.render('pages/timeline-modal', {album: album, user: user, reqUser: req.user});
         })
     });
   },
