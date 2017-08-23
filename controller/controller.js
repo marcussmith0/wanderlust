@@ -53,7 +53,7 @@ module.exports = {
 
         });
             
-        res.render('pages/followers', {user: user, reqUser: req.user, newsFeed: newsFeed});
+        res.render('pages/followers-test', {user: user, reqUser: req.user, newsFeed: newsFeed});
     });
   },
 
