@@ -136,7 +136,7 @@ module.exports = {
         if (err) res.send(err);
 
 
-        res.render(`pages/albums-test`, {user: user, reqUser: req.user});
+        res.render(`pages/album-test`, {user: user, reqUser: req.user});
     });
   },
 
