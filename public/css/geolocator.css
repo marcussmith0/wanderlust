@@ -39,3 +39,17 @@
     width: 550px;
     margin-right: 2%;
 }
+
+.gm-style-iw {
+    width: 80px !important;
+}
+
+
+
+#info {
+    width: 90px;
+}
+
+#img-preview {
+    image-orientation: from-image;
+}
