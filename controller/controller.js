@@ -140,7 +140,7 @@ module.exports = {
     });
   },
 
-  album_create: function (req, res) {
+  user_albums: function (req, res) {
 
     res.render("pages/album-test");
   },
