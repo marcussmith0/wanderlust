@@ -9,6 +9,9 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 var flash        = require('connect-flash');
 var passport     = require('passport');
+// TOOL TO MAKE AJAX REQUESTS
+var fetch = require('node-fetch');
+var querystring = require('querystring');
 
 var app = express();
 const PORT = process.env.PORT || 8080;
@@ -52,15 +55,12 @@ require('./routes/yelp-routes')(app);
 require('./routes/routes')(app);
 require("./routes/auth-routes")(app, passport);
 
-<<<<<<< HEAD
 var port = app.get('port');
-app.listen(port, function () {
-    console.log('App running at ' + port);
-});
-=======
 
 // TOOL TO MAKE URL STRINGS: https://nodejs.org/api/querystring.html
 var querystring = require('querystring');
+
+// TOOL TO MAKE URL STRINGS: https://nodejs.org/api/querystring.html
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -112,8 +112,6 @@ app.get('/api/:postalCode', function (req, res) {
 });
 
 
-=======
 app.listen(PORT, function () {
     console.log('App running at ' + PORT);
 });
->>>>>>> cfc2e24c9c3e9114b203d71478ac8d322dc8a0b4
