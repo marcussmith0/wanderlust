@@ -28,6 +28,11 @@ var commentSchema = new Schema({
     _creator_avatar: {
         type: String,
         required: true
+    },
+
+    _creator_id: {
+        type: Schema.Types.ObjectId,
+        required: true
     }
 
 });
