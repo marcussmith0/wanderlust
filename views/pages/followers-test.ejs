@@ -51,9 +51,11 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form> -->
 
-      <div class="btn-group">
+      <% if( user.google.token === reqUser.google.token ) { %>
+        <img src="<%= reqUser.google.profile_image %>" class="user-avatar" alt="<%= reqUser.google.name %>" /> &nbsp;&nbsp;
+        <div class="btn-group">
           <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            John Doe
+            <%= reqUser.google.name %>
           </button>
           <div class="dropdown-menu show">
               <a class="dropdown-item" href="#">Messages</a>
@@ -61,6 +63,19 @@
               <a class="dropdown-item" href="#">Sign Out</a>
           </div>
         </div>
+      <% } else { %>
+        <img src="<%= reqUser.google.profile_image %>" class="user-avatar" alt="<%= reqUser.google.name %>" /> &nbsp;&nbsp;
+        <div class="btn-group">
+          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= user.google.name %>
+          </button>
+          <div class="dropdown-menu show">
+              <a class="dropdown-item" href="#">Send Message</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Block</a>
+          </div>
+        </div>
+      <% } %>
     </div>
   </nav>
 

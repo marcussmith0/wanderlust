@@ -52,7 +52,7 @@ module.exports = {
             })
 
         });
-            
+
         res.render('pages/followers-test', {user: user, reqUser: req.user, newsFeed: newsFeed});
     });
   },
