@@ -87,16 +87,27 @@
                                     <div class="modal-body">
 
                                         <div class="post-description">
+
+                                            <% var commentsReversed = album.comments.reverse() %>
+
+                                             <% commentsReversed.forEach(function(comment, index) { %>
+
+                                                <%= console.log(comment); %>
+
                                             <div>
+                                                <img src="<%=comment._creator_avatar%>" height="25px" width="25px" />
                                                 <div class="name-post">
-                                                    <a href="#"><b>Joe Doe</b></a> Says:
+                                                    <a href="#"><b><%= comment._creator%></b></a> Says:
                                                 </div>
                                                 <h6 class="text-muted time">1 minute ago</h6>
 
-                                                <p>I went to Galveston beach and it was dirty.</p>
+                                                <p><%= comment.text %></p>
 
                                                 <hr />
                                             </div>
+
+                                            <% }); %> 
+
                                             <div class="stats">
 
                                                 <a href="#" class="btn btn-default stat-item">

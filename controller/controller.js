@@ -179,7 +179,6 @@ module.exports = {
             if (err) res.send(err);
 
             console.log("THIS IS THE ALBUM OBJECt", album);
-            console.log("THIS IS THE user OBJECt", user);
 
             res.render('pages/timeline-modal', {album: album, user: user, reqUser: req.user});
         })
