@@ -8,12 +8,16 @@ module.exports = function (app) {
 
     app.get('/', controller.home);
 
+    app.get('/messages', controller.messages);
+
     app.get('/profile/:id', controller.profile);
 
     app.post('/follow/:id', controller.follow);
     app.post('/unfollow/:id', controller.unfollow);
 
-    app.post('/album', controller.album);
+    app.post('/album', multipartMiddleware, controller.album);
+
+    app.get('/user_albums/:id', controller.get_albums);
 
     app.get('/album/:id', controller.collection);
 
@@ -31,7 +35,7 @@ module.exports = function (app) {
     
     app.post('/update', controller.update);
 
-    app.post('/destroy', controller.destroy);
+    app.post('/destroy/:id', controller.destroy);
 
     app.get('/account/:id', controller.find);
 

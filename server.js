@@ -10,11 +10,17 @@ var session      = require('express-session');
 var flash        = require('connect-flash');
 var passport     = require('passport');
 
-var app = express();
+// TOOL TO MAKE AJAX REQUESTS
+var fetch = require('node-fetch');
+var querystring = require('querystring');
+
 const PORT = process.env.PORT || 8080;
 
+var url = process.env.MONGODB_URI || 'mongodb://localhost/cloudinary-instagram';
+var app = express();
+
 require('./config/passport')(passport);
-mongoose.connect('mongodb://localhost/cloudinary-instagram');
+mongoose.connect(url);
 
 
 app.use(morgan('dev'));
@@ -54,4 +60,5 @@ require("./routes/auth-routes")(app, passport);
 
 app.listen(PORT, function () {
     console.log('App running at ' + PORT);
-});
+
+})
