@@ -15,7 +15,6 @@ var albumSchema = new Schema({
     },
 
     featured_image: String,
-    image_id: String,
 
     photos: [{
         type: Schema.Types.ObjectId,
