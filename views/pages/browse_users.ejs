@@ -65,7 +65,7 @@
 
     <div class="container">
 
-        <% users.forEach(function (user, index) { %>
+        <% user.forEach(function (user, index) { %>
 
             <% if(user.google.token === reqUser.google.token) { %>
                 <% console.log("this user is you, will not be rendered"); %>

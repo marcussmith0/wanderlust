@@ -29,10 +29,10 @@ module.exports = {
 
   browse_users: function (req, res) {
 
-    User.find({}, function (err, user) {
+    User.find({}, function (err, users) {
         if (err) res.send(err);
 
-        res.render("pages/browse_users", {user: user, reqUser: req.user});
+        res.render("pages/browse_users", {user: users, reqUser: req.user});
     }); 
   },
 
