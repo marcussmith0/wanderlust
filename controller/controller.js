@@ -76,16 +76,6 @@ module.exports = {
 
   },
 
-  index: function (req, res) {
-      Photo.find({}, function (err, photos) {
-          if(err) res.send(err);
-
-          res.render('pages/index', {photos: photos});
-      });
-
-
-  },
-
   new: function (req, res) {
       res.render('pages/new');
   },
