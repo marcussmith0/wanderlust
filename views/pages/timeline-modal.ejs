@@ -110,14 +110,27 @@
 
                                             <div class="stats">
 
-                                                 <span>
+                                                <% if (user.followers.indexOf(reqUser._id) === -1) { %>
+                                                <span>
                                                     <form action="/favorite/<%=album._id%>" method="POST">
                                                         <button class="stat-item">
                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                             <%= album.favorites.length %>
                                                         </button>
                                                     </from>
-                                                </span> 
+                                                </span>
+
+                                                <% } else { %>
+                                                <span>
+                                                    <form action="/unfavorite/<%=album._id%>" method="POST">
+                                                        <button class="stat-item">
+                                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                                            <%= album.favorites.length %>
+                                                        </button>
+                                                    </from>
+                                                </span>
+
+                                                <% } %>
 
                                                 <a href="#" class="btn btn-default stat-item">
                                                     <i class="fa fa-commenting" aria-hidden="true"></i>
