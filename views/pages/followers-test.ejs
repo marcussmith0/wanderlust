@@ -196,11 +196,11 @@
 
                 <% } else if (user.followers.indexOf(reqUser._id) === -1){ %>
                   <form action="/follow/<%= user.id %>" method="POST">
-                    <a class="btn btn-primary">Follow</a>
+                    <button type="submit" class="btn btn-primary">Follow</button>
                   </form>
                 <% } else { %>
                   <form action="/unfollow/<%= user.id %>" method="POST">
-                    <a class="btn btn-danger">Unfollow</a>
+                    <button type="submit" class="btn btn-danger">Unfollow</button>
                   </form>
                 <% } %>
               </div>
