@@ -11,7 +11,8 @@
     <script type="text/javascript" src="../../public/javascript/jquery.exif.js"></script>
 
     <!--  Bootstrap CDN -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,55 +20,50 @@
     <!-- Custom Style Sheets -->
     <link rel="stylesheet" href="../../public/css/geolocator.css">
     <link rel="stylesheet" href="../../public/css/navbar.css">
-    
+
     <title>Geo-Locator</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">WanderLust</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto navbar-center">
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> -->
-                <li class="nav-item ">
-                    <a class="nav-link" href="./followers.html"><i class="fa fa-users" aria-hidden="true"></i> Followers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./timeline.html"><i class="fa fa-clock-o" aria-hidden="true"></i> Timeline</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="./albums.html"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+        <a class="navbar-brand" href="#">Wanderlust</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./followers-test.html"><i class="fa fa-users" aria-hidden="true"></i>  Followers </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./discover.html"><i class="fa fa-globe" aria-hidden="true"></i> Discover</a>
+                    <a class="nav-link" href="./timeline-test.html"><i class="fa fa-clock-o" aria-hidden="true"></i> Timeline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./pinboard.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pinboard</a>
+                    <a class="nav-link" href="./album-test.html"><i class="fa fa-picture-o" aria-hidden="true"></i>  Albums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./bucketlist.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Bucketlist</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./messages.html"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a>
+                    <a class="nav-link" href="./discover-test.html"><i class="fa fa-globe" aria-hidden="true"></i>  Discover</a>
                 </li>
                 <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#">BucketList</a>
-          </li> -->
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li> -->
             </ul>
-            <div class="user-icon">
-                <a href="#"><img src="../../public/images/user-avatar.jpg" class="user-avatar" alt="admin@bootstrapmaster.com"> <strong>Hi, Joe Doe</strong></a>
-                <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
-                <!-- <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
+            <!-- <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form> -->
+
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        John Doe
+                      </button>
+                <div class="dropdown-menu show">
+                    <a class="dropdown-item" href="#">Messages</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sign Out</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -76,16 +72,12 @@
     <div class="page-header">
         <h2>Don't forget to document your vacation!!</h2>
         <p>
-            <em>Upload your images, and we'll plot out your trip!  *Please note:  GPS recording capability must be enabled for the photos to render. At this time, only files of type .jpg / .jpeg can be plotted.  </em>
+            <em>Upload your images, and we'll plot out your trip!  *Please note:  GPS recording capability must be enabled on your device for the photos to render. At this time, only files of type .jpg / .jpeg can be plotted.  </em>
         </p>
     </div>
     <div class="row">
         <div class="col-lg-4">
             <div id="app"></div>
-            <label class="file-upload-container" for="file">
-                    <input type="file" id="file" style="display: none;"/>
-                    Select a File to Upload
-                </label>
         </div>
         <div class="col-lg-7">
             <form id="myform">
@@ -95,7 +87,31 @@
         <div class="col-lg-1"></div>
         <!-- <div class="col-lg-1"></div> -->
     </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label class="file-upload-container" for="file">
+                <input type="file" id="file" style="display: none;"/>
+                Select a File to Upload
+            </label>
+        </div>
+        <div class="col-lg-2">
+            <label class="file-upload-container">
+                <input id="save" style="display: none;"/>
+                Save Map
+            </label>
+        </div>
+        <div class="col-lg-5">
+            <textarea rows="1" maxlength="50" id="textbox" placeholder="Add a Caption - Max Length of 50 Characters"></textarea>
+        </div>
+        <div class="col-lg-2" id="captionButton">
+            <label class="file-upload-container">
+                <input id="caption" style="display: none;"/>
+                Save Caption
+            </label>
+        </div>
+        <div class="col-lg-1"></div>
 
+    </div>
 
     <script>
         // This code block extracts the GPS data from the EXIF object and pushes them into an array of coordinates
@@ -127,6 +143,7 @@
         var CLOUDINARY_UPLOAD_PRESET = 'r7lvwcam';
         var imgPreview = document.getElementById('img-preview');
         var fileUpload = document.getElementById('file');
+        var addCaption = document.getElementById('caption');
 
 
         $(document).ready(
@@ -203,19 +220,22 @@
                 // console.log("picUrl: ", picUrl);
                 if (status === 'OK') {
                     if (results[0]) {
-                        var htmlstring = '<a target="_blank" href="http://res.cloudinary.com/demo/image/fetch/' + picUrl + '"><img width="71" height="40" src="' + picUrl + '" /></a>';
+                        var htmlstring = '<div class="infowindow-content">' +
+                                            '<a target="_blank" href="http://res.cloudinary.com/demo/image/fetch/' + picUrl + '"><img width="71" height="40" src="' + picUrl + '" /></a>' + 
+                                            '<div id="captionString">' +
+                                         '</div>';
                         console.log(htmlstring);
                         map.setZoom(8);
                         var infowindow = new google.maps.InfoWindow({
-                            maxWidth: 90,
+                            width: 500,
                             position: coord,
                             map: map,
                             content: htmlstring,
                             url: picUrl
                         });
-                        console.log("picUrl: ", picUrl);                     
+                        console.log("picUrl: ", picUrl);
                         infowindow.open(map);
-                        $('#info').on('click', function() {
+                        $('#info').on('click', function () {
                             window.location.href = this.url;
                         })
                     } else {
@@ -226,6 +246,17 @@
                 }
             });
         }
+
+        $(document).ready(
+            $('#caption').on('click', function(event) {
+                event.preventDefault();
+                var captionText = $("#textbox").val().trim();
+
+                $("#captionString").html(captionText);
+
+                console.log(captionText);
+            })
+        );
         // -------------------------------------------------------------------------------------------------------------------------
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
