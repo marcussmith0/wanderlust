@@ -86,16 +86,6 @@ module.exports = {
 
   },
 
-  find: function (req, res) {
-      var id = req.params.id;
-
-      Photo.findOne({image_id: id}).populate("comments").exec(function (err, photo) {
-          if (err) res.send(err);
-
-          res.render('pages/single', {photo: photo, image: cloudinary.image, image_url: cloudinary.url});
-      })
-  },
-
   new: function (req, res) {
       res.render('pages/new');
   },
@@ -144,7 +134,6 @@ module.exports = {
     User.findById(id).populate("albums").exec(function (err, user) {
         if (err) res.send(err);
 
-
         res.render(`pages/album-test`, {user: user, reqUser: req.user});
     });
   },
@@ -186,8 +175,6 @@ module.exports = {
 
         User.findById(album._creator, function (err, user) {
             if (err) res.send(err);
-
-            console.log("THIS IS THE ALBUM OBJECt", album);
 
             res.render('pages/timeline-modal', {album: album, user: user, reqUser: req.user});
         })
