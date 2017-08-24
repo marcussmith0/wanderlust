@@ -67,7 +67,7 @@
           </div>
         </div>
       <% } else { %>
-        <img src="<%= reqUser.google.profile_image %>" class="user-avatar" alt="<%= reqUser.google.name %>" /> &nbsp;&nbsp;
+        <img src="<%= user.google.profile_image %>" class="user-avatar" alt="<%= reqUser.google.name %>" /> &nbsp;&nbsp;
         <div class="btn-group">
           <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= user.google.name %>
@@ -191,17 +191,32 @@
                               <a href="#">Following</a>
                              </div> -->
 
-                <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
                 <% if (user.google.token === reqUser.google.token) { %>
+                  <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
+
 
                 <% } else if (user.followers.indexOf(reqUser._id) === -1){ %>
-                  <form action="/follow/<%= user.id %>" method="POST">
-                    <button type="submit" class="btn btn-primary">Follow</button>
-                  </form>
+                  <ul style="list-style-type: none;">
+                    <li>
+                  <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
+                  </li>
+                    <li>
+                    <form style="display: inline;" action="/follow/<%= user._id %>" method="POST">
+                      <button type="submit" class="btn btn-primary">Follow</button>
+                    </form>
+                   </li>
+                  </ul>
                 <% } else { %>
-                  <form action="/unfollow/<%= user.id %>" method="POST">
-                    <button type="submit" class="btn btn-danger">Unfollow</button>
-                  </form>
+                  <ul style="list-style-type: none;">
+                    <li>
+                      <a href="./timeline-test.html" class="btn btn-primary">View Timeline</a>
+                    </li>
+                    <li>
+                      <form style="display: inline;" action="/unfollow/<%= user._id %>" method="POST">
+                        <button type="submit" class="btn btn-danger">Unfollow</button>
+                      </form>
+                    </li>
+                  </ul>
                 <% } %>
               </div>
 
