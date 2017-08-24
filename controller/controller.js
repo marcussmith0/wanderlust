@@ -280,7 +280,7 @@ module.exports = {
     favorite: function (req, res) {
         var id = req.params.id;
 
-        Album.findByIdAndUpdate(id, {$push: {favorites: req.user._id}} function (err, album) {
+        Album.findByIdAndUpdate(id, {$push: {favorites: req.user._id}}, {new: true}, function (err, album) {
             if (err) res.send(err);
 
             User.findByIdAndUpdate(req.user._id, {$push: {favorites: album}}, {new: true}, function (err, user) {
