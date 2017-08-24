@@ -15,6 +15,7 @@ module.exports = function (app) {
     app.post('/unfavorite/:id', controller.unfavorite);
 
     app.get('/profile/:id', controller.profile);
+    app.get('/timeline/:id', controller.timeline);
 
     app.post('/follow/:id', controller.follow);
     app.post('/unfollow/:id', controller.unfollow);

@@ -171,6 +171,16 @@ module.exports = {
     });
   },
 
+  timeline: function (req, res) {
+      var id = req.params.id;
+
+      User.findById(id).populate("albums").exec(function (err, user) {
+          if (err) res.send(err);
+
+          res.render("pages/timeline-test", {user: user});
+      });
+  },
+
   upload: function (req, res) {
 
       cloudinary.v2.uploader.upload(req.files.image.path,
