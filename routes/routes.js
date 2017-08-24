@@ -9,6 +9,8 @@ module.exports = function (app) {
     app.get('/', controller.home);
 
     app.get('/messages', controller.messages);
+    app.get('/browse_users', controller.browse_users);
+
 
     app.get('/profile/:id', controller.profile);
 
