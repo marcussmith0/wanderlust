@@ -29,7 +29,11 @@ module.exports = {
 
   browse_users: function (req, res) {
 
-    res.render("pages/browse_users");
+    User.find({}, function (err, user) {
+        if (err) res.send(err);
+
+        res.render("pages/browse_users", {user: user, reqUser: req.user});
+    }); 
   },
 
   profile: function (req, res) {
