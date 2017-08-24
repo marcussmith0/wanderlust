@@ -11,7 +11,7 @@ module.exports = function (app) {
     app.get('/messages', controller.messages);
     app.get('/browse_users', controller.browse_users);
 
-    app.post('/favorites/:id', controller.favorites);
+    app.post('/favorite/:id', controller.favorites);
 
     app.get('/profile/:id', controller.profile);
 
