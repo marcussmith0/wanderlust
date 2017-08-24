@@ -110,23 +110,24 @@
 
                                             <div class="stats">
 
-                                                <a href="#" class="btn btn-default stat-item">
-                                                            <i class="fa fa-heart" aria-hidden="true"></i> 2
-                                                        </a>
+                                                 <span>
+                                                    <form action="/favorite/<%=album._id%>" method="POST">
+                                                        <button class="stat-item">
+                                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                                            <%= album.favorites.length %>
+                                                        </button>
+                                                    </from>
+                                                </span> 
 
                                                 <a href="#" class="btn btn-default stat-item">
-                                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 2
-                                                            </a>
-
-                                                <a href="#" class="btn btn-default stat-item">
-                                                        <i class="fa fa-commenting" aria-hidden="true"></i>
-                                            
-                                            </a>
+                                                    <i class="fa fa-commenting" aria-hidden="true"></i>
+                                                    <%= album.comments.length %>
+                                                </a>
                                                 <a href="#" class="btn btn-default stat-item">
                                                 <i class="fa fa-share"></i>
                                             </a>
                                             </div>
-                                            <form  action="/comment/<%=album._id%>" method="POST">
+                                            <form action="/comment/<%=album._id%>" method="POST">
                                                 <div class="form-group">
                                                     <textarea name="comment" class="form-control" rows="3"></textarea>
                                                 </div>
