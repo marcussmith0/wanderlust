@@ -177,6 +177,8 @@ module.exports = {
       User.findById(id).populate("albums").exec(function (err, user) {
           if (err) res.send(err);
 
+          console.log("ASD;FAJ;DSJFAJ!!!", user);
+
           res.render("pages/timeline-test", {user: user});
       });
   },
