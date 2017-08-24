@@ -277,6 +277,20 @@ module.exports = {
         }
     },
 
+    favorite: function (req, res) {
+        var id = req.params.id;
+
+        Album.findById(id, function (err, album) {
+            if (err) res.send(err);
+
+            User.findByIdAndUpdate(req.user._id, {$push: {favorites: album}}, {new: true}, function (err, user) {
+                if (err) res.send(err);
+
+                res.send(`/album/${id}`);
+            });
+        })
+    },
+
     comment: function (req, res) {
 
         var id = req.params.id;
