@@ -286,7 +286,7 @@ module.exports = {
             User.findByIdAndUpdate(req.user._id, {$push: {favorites: album}}, {new: true}, function (err, user) {
                 if (err) res.send(err);
 
-                res.send(`/album/${id}`);
+                res.redirect(`/album/${id}`);
             });
         })
     },
