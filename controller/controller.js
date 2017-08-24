@@ -235,25 +235,6 @@ module.exports = {
           });
   },
 
-    admin:{
-        index: function (req, res) {
-            var q = req.query.q;
-            var callback = function(result){
-                var searchValue = '';
-                if(q){
-                    searchValue = q;
-                }
-                res.render('admin/index', {photos: result.resources, searchValue: searchValue});
-            };
-            if(q){
-                cloudinary.api.resources(callback,
-                    { type: 'upload', prefix: q });
-            } else {
-                cloudinary.api.resources(callback);
-            }
-        }
-    },
-
     favorite: function (req, res) {
         var id = req.params.id;
 
