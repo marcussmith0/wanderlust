@@ -29,8 +29,6 @@ module.exports = function (app) {
 
     app.get('/discover', controller.discover);
 
-    app.get('/index', controller.index);
-
     app.get('/new', controller.new);
 
     app.post('/create', multipartMiddleware, controller.create);
@@ -40,8 +38,6 @@ module.exports = function (app) {
     app.post('/update', controller.update);
 
     app.post('/destroy/:id', controller.destroy);
-
-    app.get('/account/:id', controller.find);
 
     app.post('/comment/:id', controller.comment);
 

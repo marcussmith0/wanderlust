@@ -110,7 +110,7 @@
 
                                             <div class="stats">
 
-                                                <% if (user.followers.indexOf(reqUser._id) === -1) { %>
+                                                <% if (album.favorites.indexOf(reqUser._id) === -1) { %>
                                                 <span>
                                                     <form action="/favorite/<%=album._id%>" method="POST">
                                                         <button class="stat-item">
