@@ -12,6 +12,7 @@ module.exports = function (app) {
     app.get('/browse_users', controller.browse_users);
 
     app.post('/favorite/:id', controller.favorite);
+    app.post('/unfavorite/:id', controller.unfavorite);
 
     app.get('/profile/:id', controller.profile);
 
