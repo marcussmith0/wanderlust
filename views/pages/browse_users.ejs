@@ -63,7 +63,7 @@
   <div class="container marketing">
     <!-- START THE FEATURETTES -->
 
-    <h1>Browse <%= user.length %> Profiles.</h1>
+    <h1 class="text-center" style="padding-top: 50px">Browse <%= user.length - 1 %> Profiles.</h1>
 
     <div class="container">
 
@@ -74,6 +74,11 @@
 
             <% } else { %>
                 <% console.log(user); %>
+
+                <a href="/profile/<%= user._id%>">
+                    <h4> <%= user.google.name %> </h4>
+                    <h6> <%= user.google.email %> </h6>
+                </a>
                 
             <% } %>
 
