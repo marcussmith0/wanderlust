@@ -47,10 +47,4 @@ module.exports = function (app) {
 
     app.post('/comment/toggle-vote/:id', controller.vote);
 
-
-    /*
-    * Admin Routes
-    *
-    * */
-    app.get('/admin', controller.admin.index);
 };
