@@ -27,6 +27,11 @@ module.exports = {
     res.render('pages/sign-in-modal');
   },
 
+  browse_users: function (req, res) {
+
+    res.render("pages/browse_users");
+  },
+
   profile: function (req, res) {
 
     var id = req.params.id;
