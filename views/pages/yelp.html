@@ -13,12 +13,15 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 
     <!-- Custom styles for this template -->
-    <link href="/css/carousel.css" rel="stylesheet">
-    <link href="/css/navbar.css" rel="stylesheet">
-    <link href="/css/followers.css" rel="stylesheet">
+    <link href="./css/carousel.css" rel="stylesheet">
+    <link href="./css/navbar.css" rel="stylesheet">
+    <link href="./css/followers.css" rel="stylesheet">
+<!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>#search-button:hover{background: cyan}</style>
 </head>
 
 <body>
@@ -35,45 +38,33 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 <li class="nav-item ">
-                    <a class="nav-link" href="./followers.html"> <i class="fa fa-users" aria-hidden="true"></i>  Followers</a>
+                    <a class="nav-link" href="#">Followers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./timeline.html"><i class="fa fa-clock-o" aria-hidden="true"></i>  Timeline</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/user_albums/<%= user._id%>"><i class="fa fa-picture-o" aria-hidden="true"></i> Albums</a>
+                    <a class="nav-link" href="#">Timeline</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./discover.html"><i class="fa fa-globe" aria-hidden="true"></i>  Discover</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="./pinboard.html"><i class="fa fa-thumb-tack" aria-hidden="true"></i> Pinboard</a>
+                    <a class="nav-link" href="#">Memories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./bucketlist.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Bucketlist</a>
+                    <a class="nav-link" href="#">Explore</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./messages.html"> <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a>
-                </li> -->
+                    <a class="nav-link" href="#">Bucketlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
                 <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#">BucketList</a>
           </li> -->
             </ul>
-            <div class="user-icon">
 
-                <% if (user.google.token === reqUser.google.token) { %>
-                    <% console.log(user.google.profile_image)%>
-
-                    <a href="#"><img src="<%= user.google.profile_image %>" class="user-avatar" alt="admin@bootstrapmaster.com" /> <strong>Hi, <%= reqUser.google.name %></strong></a>
-                <!-- <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button> -->
-                <!-- <form class="form-inline mt-2 mt-md-0">
+            <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span>Post</button>
+            <!-- <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> -->
-               <% } %>
-                
-            </div>
         </div>
     </nav>
 
@@ -85,12 +76,12 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" src="/images/india.jpg" alt="First slide">
+                <img class="first-slide" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/85/48/e6/seven-mile-beach-grand.jpg" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1>Visit Mumbai</h1>
-                        <p>Mumbai is among the most popular nerve centers of India, a business and entertainment capital, the
-                            bustling city of dreams! </p>
+                        <h1>Example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                     </div>
                 </div>
@@ -100,9 +91,9 @@
                     alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>It's More Fun in the Philippines</h1>
-                        <p>The country boasts thousands of islands with powdery beaches and crystal clear water, lush forests,
-                            active volcanoes and futuristic cities</p>
+                        <h1>Another example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
                     </div>
                 </div>
@@ -111,10 +102,9 @@
                 <img class="third-slide" src="https://www.adb.org/sites/default/files/content-media/17596-ado-philippines-final.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-right">
-                        <h1>Explore the Night Life</h1>
-                        <p>
-                            Switch is one of the most popular clubs in the city of Tbilisi. It is actually a private club, because not everyone is allowed
-                            inside. Visitors need to make sure they’re well dressed to gain entry.</p>
+                        <h1>One more for good measure.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                            eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
                     </div>
                 </div>
@@ -137,43 +127,29 @@
 
     <div class="container marketing">
 
-
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-lg-4">
-                        <div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-block">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                </div>
-                <div class="col-lg-8">PhotoGrid</div>
-            </div>
-        </div>
-
         <!-- Three columns of text below the carousel -->
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-lg-12">
-
-                <div class="follower-grid ">
-                    <div class="gridthings">
-                        <img src="/images/couples.jpg" alt>
-                        <img src="/images/cali.jpg" alt>
-                        <img src="/images/camping.jpg" alt>
-                        <img src="/images/vegas.jpg" alt>
-                        <img src="/images/beachgirls.jpg" alt>
-                        <img src="/images/wildlife.jpg" alt>
-                        <img src="/images/china.jpg" alt>
-                        <img src="/images/president.jpg" alt>
-                        <img src="/images/thailand.jpg" alt>
-                    </div>
-                </div>
+                 <form>
+                <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for a place of interest" name="search" id="search-field">
+            <!--yelp search terms will go here-->
+                <div class="input-group-btn">
+              <button class="btn btn-default" type="submit" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
+          </div>
+      </form>
+             
+                <div class="search-results">
+                    <!--Yelp search results will go here-->
+                </div>
+
+
+            </div>
+
         </div>
+
+
 
         <hr class="featurette-divider">
 
@@ -193,12 +169,16 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
     <script>
+
         window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
 </script>
-     <script type="text/javascript" src="/yelp.js"> </script>
+        <script type="text/javascript" src="/yelp.js"> </script>
+
     <script src="http://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
