@@ -24,7 +24,16 @@ module.exports = {
 
   messages: function (req, res) {
 
-    res.render('pages/messages');
+    res.render('pages/sign-in-modal');
+  },
+
+  browse_users: function (req, res) {
+
+    User.find({}, function (err, users) {
+        if (err) res.send(err);
+
+        res.render("pages/browse_users", {user: users, reqUser: req.user});
+    }); 
   },
 
   profile: function (req, res) {
@@ -52,8 +61,8 @@ module.exports = {
             })
 
         });
-            
-        res.render('pages/followers', {user: user, reqUser: req.user, newsFeed: newsFeed});
+
+        res.render('pages/followers-test', {user: user, reqUser: req.user, newsFeed: newsFeed});
     });
   },
 
@@ -65,26 +74,6 @@ module.exports = {
         res.render("pages/discover", {users});
     });
 
-  },
-
-  index: function (req, res) {
-      Photo.find({}, function (err, photos) {
-          if(err) res.send(err);
-
-          res.render('pages/index', {photos: photos});
-      });
-
-
-  },
-
-  find: function (req, res) {
-      var id = req.params.id;
-
-      Photo.findOne({image_id: id}).populate("comments").exec(function (err, photo) {
-          if (err) res.send(err);
-
-          res.render('pages/single', {photo: photo, image: cloudinary.image, image_url: cloudinary.url});
-      })
   },
 
   new: function (req, res) {
@@ -135,8 +124,7 @@ module.exports = {
     User.findById(id).populate("albums").exec(function (err, user) {
         if (err) res.send(err);
 
-
-        res.render(`pages/albums`, {user: user, reqUser: req.user});
+        res.render(`pages/album-test`, {user: user, reqUser: req.user});
     });
   },
 
@@ -178,12 +166,19 @@ module.exports = {
         User.findById(album._creator, function (err, user) {
             if (err) res.send(err);
 
-            console.log("THIS IS THE ALBUM OBJECt", album);
-            console.log("THIS IS THE user OBJECt", user);
-
-            res.render('pages/post', {album: album, user: user, reqUser: req.user});
+            res.render('pages/timeline-modal', {album: album, user: user, reqUser: req.user});
         })
     });
+  },
+
+  timeline: function (req, res) {
+      var id = req.params.id;
+
+      User.findById(id).populate("albums").exec(function (err, user) {
+          if (err) res.send(err);
+
+          res.render("pages/timeline-test", {user: user, reqUser: req.user});
+      });
   },
 
   upload: function (req, res) {
@@ -250,23 +245,32 @@ module.exports = {
           });
   },
 
-    admin:{
-        index: function (req, res) {
-            var q = req.query.q;
-            var callback = function(result){
-                var searchValue = '';
-                if(q){
-                    searchValue = q;
-                }
-                res.render('admin/index', {photos: result.resources, searchValue: searchValue});
-            };
-            if(q){
-                cloudinary.api.resources(callback,
-                    { type: 'upload', prefix: q });
-            } else {
-                cloudinary.api.resources(callback);
-            }
-        }
+    favorite: function (req, res) {
+        var id = req.params.id;
+
+        Album.findByIdAndUpdate(id, {$push: {favorites: req.user._id}}, {new: true}, function (err, album) {
+            if (err) res.send(err);
+
+            User.findByIdAndUpdate(req.user._id, {$push: {favorites: album}}, {new: true}, function (err, user) {
+                if (err) res.send(err);
+
+                res.redirect(`/album/${id}`);
+            });
+        })
+    },
+
+    unfavorite: function (req, res) {
+        var id = req.params.id;
+
+        Album.findByIdAndUpdate(id, {$pull: {favorites: req.user._id}}, {new: true}, function (err, album) {
+            if (err) res.send(err);
+
+            User.findByIdAndUpdate(req.user._id, {$pull: {favorites: album}}, {new: true}, function (err, user) {
+                if (err) res.send(err);
+
+                res.redirect(`/album/${id}`);
+            });
+        })
     },
 
     comment: function (req, res) {
@@ -277,7 +281,8 @@ module.exports = {
             text: req.body.comment,
             created_at: Date.now(),
             _creator: req.user.google.name,
-            _creator_avatar: req.user.google.profile_image
+            _creator_avatar: req.user.google.profile_image,
+            _creator_id: req.user._id
         });
 
         Album.findByIdAndUpdate(id, { $push: {comments: newComment} }, {new: true}, function(err, album) {
