@@ -9,7 +9,6 @@ module.exports = (app, passport) => {
     }), function(req, res) {
 
         res.redirect(`/profile/${req.user._id}`);
-
     });
 
     app.get('/connect/google', passport.authorize('google', { scope : ['profile', 'email'] }));

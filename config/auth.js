@@ -2,9 +2,9 @@ module.exports = {
 
     'googleAuth' : {
 
-        'clientID'      : '295129897174-cla0v7tp130ci25ivcj609rek8qdmcgv.apps.googleusercontent.com',
-        'clientSecret'  : 'RjkSeDumqFCL4Sm4u3gbpAaT',
-        'callbackURL'   : 'http://localhost:8080/auth/google/callback'
+        'clientID'      : '295129897174-agnqsan0p9vmndapt32vq94uavag6a4e.apps.googleusercontent.com',
+        'clientSecret'  : 'FpojktxNXXqtK7phfLYrm8rk',
+        'callbackURL'   : 'https://wander1ust.herokuapp.com/auth/google/callback'
         
     }
 
