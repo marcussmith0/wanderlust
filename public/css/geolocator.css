@@ -1,6 +1,6 @@
  .file-upload-container {
     margin-top: 10px;
-    width: 550px;
+    width: 247px;
     height: 50px;
     overflow: hidden;
     background: #343A40;
@@ -19,11 +19,25 @@
     margin-right: 200px;
 }
 
+#captionButton {
+    margin-left: 30px;
+}
+
 .file-upload-container:hover {
     cursor: pointer;
     background: black;
     color: white;
 } 
+
+textarea {
+    margin-top: 10px;
+    width: 760px;
+    height: 50px;
+    text-decoration-color: #BEB4B4;
+    font-size: 20px;
+    padding-top: 10px;
+    display: inline-block;
+}
 
 .page-header {
     margin-top: 5%;
@@ -41,10 +55,8 @@
 }
 
 .gm-style-iw {
-    width: 80px !important;
+    width: 150px !important;
 }
-
-
 
 #info {
     width: 90px;
@@ -53,3 +65,11 @@
 #img-preview {
     image-orientation: from-image;
 }
+
+/* #captionString {
+    width: 180px;
+}
+
+.infowindow-content {
+    width: 200px;
+} */

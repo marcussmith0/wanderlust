@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/signin-modal-style.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-social.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dr Sugiyama">
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal-dialog" role="document"> -->
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-9" id="meow">
+                            <div class="modal-header">
+                                <!-- <h5 class="modal-title" id="exampleModalLabel">WanderLust</h5> -->
+                                <h5 class="modal-title" id="exampleModalLabel">WanderLust</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 col-xl-3">
+                                    <div class="modal-body">
+                                        <p class="account-text">Create a New Account</p>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="form-control-label">Name:</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon" id="sizing-addon2">@</span>
+                                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="sizing-addon2">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="form-control-label">Email:</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            </div>
+                                        </form>
+
+                                        <button type="button" class="btn btn-primary">Create Account</button>
+
+                                        <br />
+                                        <br />
+                                        <p class="memo">By creating an account you agree to our <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy.</a></p>
+
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="col-4 col-xl-3">
+                                    <div class="modal-body">
+                                        <p class="account-text">Use your Social Network</p>
+
+
+                                        <a class="btn btn-block btn-social btn-facebook" href='#'>
+                                                <span class="fa fa-facebook"></span>
+                                                Sign in with Facebook
+                                              </a>
+
+                                        <a href='/auth/google' class="btn btn-block btn-social btn-google">
+                                                    <span class="fa fa-google"></span>
+                                                    Sign in with Google
+                                                  </a>
+                                        <a class="btn btn-block btn-social btn-twitter" href='#'>
+                                                        <span class="fa fa-twitter"></span>
+                                                        Sign in with Twitter
+                                                      </a>
+
+                                        <a class="btn btn-block btn-social btn-instagram" href='#'>
+                                                            <span class="fa fa-instagram"></span>
+                                                            Sign in with instagram
+                                                          </a>
+                                        <!-- <form>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="form-control-label">Facebook</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" class="form-control-label">GooglePlus</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" class="form-control-label">Twitter</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" class="form-control-label">Instagram</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                        </form> -->
+                                        <br />
+
+                                        <p class="memo-2">Or Sign in with <a href="#">Email</a></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javasrcipt" src="/javascript/signin.js"></script>
+
+
+
+    <!-- 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign Up / Login</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#exampleModal').modal('show');
+    });
+</script>

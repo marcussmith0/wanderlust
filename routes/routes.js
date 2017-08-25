@@ -9,8 +9,13 @@ module.exports = function (app) {
     app.get('/', controller.home);
 
     app.get('/messages', controller.messages);
+    app.get('/browse_users', controller.browse_users);
+
+    app.post('/favorite/:id', controller.favorite);
+    app.post('/unfavorite/:id', controller.unfavorite);
 
     app.get('/profile/:id', controller.profile);
+    app.get('/timeline/:id', controller.timeline);
 
     app.post('/follow/:id', controller.follow);
     app.post('/unfollow/:id', controller.unfollow);
@@ -25,8 +30,6 @@ module.exports = function (app) {
 
     app.get('/discover', controller.discover);
 
-    app.get('/index', controller.index);
-
     app.get('/new', controller.new);
 
     app.post('/create', multipartMiddleware, controller.create);
@@ -37,16 +40,8 @@ module.exports = function (app) {
 
     app.post('/destroy/:id', controller.destroy);
 
-    app.get('/account/:id', controller.find);
-
     app.post('/comment/:id', controller.comment);
 
     app.post('/comment/toggle-vote/:id', controller.vote);
 
-
-    /*
-    * Admin Routes
-    *
-    * */
-    app.get('/admin', controller.admin.index);
 };

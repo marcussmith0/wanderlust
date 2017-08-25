@@ -15,7 +15,7 @@ $(function () {
 });
 
 $(function () {
-    var string = " and we'll keep them safe.";
+    var string = " and we'll help share them.";
     var q = jQuery.map(string.split(''), function (letter) {
         return $('<span>' + letter + '</span>');
     });
